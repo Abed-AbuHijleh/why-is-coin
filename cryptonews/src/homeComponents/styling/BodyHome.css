@@ -1,0 +1,185 @@
+.body-home-div {
+	max-width: 100%;
+    overflow-x: scroll;
+}
+
+.hide {
+    max-height: 0 !important;
+}
+
+.dropdown {
+	border: 0.1em solid black;
+	width: 2.5em;
+	margin-bottom: 1em;
+	display:inline-block;
+}
+
+.dropdown .title {
+	margin: .3em .3em .3em .3em;	
+	width: 100%;
+}
+
+.dropdown .title .fa-angle-right {
+	float: right;
+	margin-right: .7em;
+	transition: transform .3s;
+}
+
+.dropdown .menu {
+	transition: max-height .5s ease-out;
+	max-height: 20em;
+	overflow: hidden;
+}
+
+.dropdown .menu .option {
+	margin: .3em .3em .3em .3em;
+	margin-top: 0.3em;
+}
+
+.dropdown .menu .option:hover {
+	background: rgba(0,0,0,0.2);
+}
+
+.pointerCursor:hover {
+	cursor: pointer;
+}
+
+.main-footer-elem {
+	float:left;
+	display:inline;
+}
+
+.main-footer {
+    width: 100%;
+    height: 15%;
+	padding-bottom:10%;
+}
+
+#dropdown-li {
+	margin-top: 12px;
+	margin-left:10vw;
+	margin-bottom: 35px;
+}
+
+.table-select-ticker {
+	text-decoration: none;
+	color: black;
+}
+
+.table-select-ticker:hover{
+	text-decoration: none;
+	color: rgb(52, 52, 255);
+}
+
+.inline-table-data {
+	list-style: none;
+    padding-left: 0;
+	padding-top: 0;
+	margin-top:0;
+}
+
+.inline-table-data li {
+	float:left;
+	display:inline;	
+}
+
+.inline-table-extra {
+	padding-left: 4%;
+	color:rgb(161, 161, 161);
+}
+
+.post-body-row td {
+	padding-right: 2vw;;
+}
+
+.page-link {
+	text-decoration: none;
+}
+
+.page-link div{
+	border-radius: 5px;
+	color:white;
+	background-color: rgb(52, 52, 255);
+	margin-left: 1%;
+}
+
+.pagination {
+    display:inline-block;
+    overflow: hidden;
+}
+
+.pagination a {
+	margin-top: 12px;
+	margin-bottom: 12px;
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 6px 9px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+#not-selected {
+	color: black;
+	background-color: white;
+}
+
+#selected {
+	color: black;
+	background-color: #eee;
+}
+
+.home-table {
+	border-collapse:separate;
+    border-spacing:0 15px;
+	min-width: 1250px;
+	padding-left: 3vw;
+	width: 97vw;
+}
+
+.post-body-row:hover {
+	background-color: rgb(245, 245, 245);
+}
+
+#red {
+	color:red;
+}
+
+#green {
+	color:green;
+}
+
+#redGraph {
+	filter: invert(53%) sepia(54%) saturate(6847%) hue-rotate(345deg) brightness(99%) contrast(98%);
+	border:1px solid black;
+}
+
+#greenGraph {
+	filter: invert(77%) sepia(78%) saturate(1584%) hue-rotate(59deg) brightness(97%) contrast(101%);
+	border:1px solid black;
+}
+
+.crypto-icon {
+	width: 20px;
+	float: left;
+	padding-right: 0.5vw;
+	margin-top: -0.5vh;
+}
+
+.userResultCount {
+	font-size: 1rem;
+	padding-right: 5vw;
+}
+
+.home-footer-div {
+	max-width: 100%;
+	overflow-x: hidden;
+	display:block;
+}
+
+.row-heading-title {
+	display: inline-block;
+	margin-right: 10px;
+	position:relative;
+	bottom:7px;
+}

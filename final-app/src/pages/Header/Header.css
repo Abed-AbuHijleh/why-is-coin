@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  min-height: 50px;
+  height: 4vh;
+  background-color: rgb(255, 255, 255);
+  border-bottom-style: solid;
+  z-index: 10;
+}
+
+.header-logo {
+  min-height: 35px;
+  height: 3vh;
+  margin-left: 1vw;
+  filter: invert(80%);
+}

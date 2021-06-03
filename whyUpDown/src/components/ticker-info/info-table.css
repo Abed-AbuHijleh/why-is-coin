@@ -1,0 +1,4 @@
+#info-table-chevron {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(329deg)
+    brightness(105%) contrast(103%);
+}

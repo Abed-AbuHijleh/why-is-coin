@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <link rel="stylesheet" href="./App Title_files/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>App Title</title>
+  <style>body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-color: RGB(34, 34, 34);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvaW5kZXguY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsU0FBUztFQUNUOztjQUVZO0VBQ1osbUNBQW1DO0VBQ25DLGtDQUFrQztFQUNsQyxrQkFBa0I7RUFDbEIsaUNBQWlDO0FBQ25DOztBQUVBO0VBQ0U7YUFDVztBQUNiIiwic291cmNlc0NvbnRlbnQiOlsiYm9keSB7XG4gIG1hcmdpbjogMDtcbiAgZm9udC1mYW1pbHk6IC1hcHBsZS1zeXN0ZW0sIEJsaW5rTWFjU3lzdGVtRm9udCwgJ1NlZ29lIFVJJywgJ1JvYm90bycsICdPeHlnZW4nLFxuICAgICdVYnVudHUnLCAnQ2FudGFyZWxsJywgJ0ZpcmEgU2FucycsICdEcm9pZCBTYW5zJywgJ0hlbHZldGljYSBOZXVlJyxcbiAgICBzYW5zLXNlcmlmO1xuICAtd2Via2l0LWZvbnQtc21vb3RoaW5nOiBhbnRpYWxpYXNlZDtcbiAgLW1vei1vc3gtZm9udC1zbW9vdGhpbmc6IGdyYXlzY2FsZTtcbiAgb3ZlcmZsb3cteDogaGlkZGVuO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBSR0IoMzQsIDM0LCAzNCk7XG59XG5cbmNvZGUge1xuICBmb250LWZhbWlseTogc291cmNlLWNvZGUtcHJvLCBNZW5sbywgTW9uYWNvLCBDb25zb2xhcywgJ0NvdXJpZXIgTmV3JyxcbiAgICBtb25vc3BhY2U7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.top-search {
+  background-image: linear-gradient(RGB(34, 34, 34), RGB(70, 69, 69));
+  color: RGB(241, 241, 241);
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.top-search h4 {
+  margin: 0;
+  font-size: min(max(16px, 4vw), 28px);
+}
+.top-search-name {
+  color: RGB(78, 134, 169);
+}
+
+.top-search-up {
+  color: RGB(83, 184, 143);
+}
+
+.top-search-down {
+  color: RGB(215, 86, 69);
+}
+
+#standard-basic {
+  color: RGB(241, 241, 241);
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvY29tcG9uZW50cy90b3Atc2VhcmNoL3RvcC1zZWFyY2guY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsbUVBQW1FO0VBQ25FLHlCQUF5QjtFQUN6QixhQUFhO0VBQ2IsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsc0JBQXNCO0FBQ3hCOztBQUVBO0VBQ0UsU0FBUztFQUNULG9DQUFvQztBQUN0QztBQUNBO0VBQ0Usd0JBQXdCO0FBQzFCOztBQUVBO0VBQ0Usd0JBQXdCO0FBQzFCOztBQUVBO0VBQ0UsdUJBQXVCO0FBQ3pCOztBQUVBO0VBQ0UseUJBQXlCO0FBQzNCIiwic291cmNlc0NvbnRlbnQiOlsiLnRvcC1zZWFyY2gge1xuICBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoUkdCKDM0LCAzNCwgMzQpLCBSR0IoNzAsIDY5LCA2OSkpO1xuICBjb2xvcjogUkdCKDI0MSwgMjQxLCAyNDEpO1xuICBoZWlnaHQ6IDE1MHB4O1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbn1cblxuLnRvcC1zZWFyY2ggaDQge1xuICBtYXJnaW46IDA7XG4gIGZvbnQtc2l6ZTogbWluKG1heCgxNnB4LCA0dncpLCAyOHB4KTtcbn1cbi50b3Atc2VhcmNoLW5hbWUge1xuICBjb2xvcjogUkdCKDc4LCAxMzQsIDE2OSk7XG59XG5cbi50b3Atc2VhcmNoLXVwIHtcbiAgY29sb3I6IFJHQig4MywgMTg0LCAxNDMpO1xufVxuXG4udG9wLXNlYXJjaC1kb3duIHtcbiAgY29sb3I6IFJHQigyMTUsIDg2LCA2OSk7XG59XG5cbiNzdGFuZGFyZC1iYXNpYyB7XG4gIGNvbG9yOiBSR0IoMjQxLCAyNDEsIDI0MSk7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.home-preview {
+  background-color: RGB(70, 69, 69);
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
+}
+
+.home-preview h3 {
+  margin: 0;
+  color: RGB(241, 241, 241);
+}
+
+.home-preview h4 {
+  margin: 0;
+  color: RGB(241, 241, 241);
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvY29tcG9uZW50cy9ob21lLXByZXZpZXcvaG9tZS1wcmV2aWV3LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGlDQUFpQztFQUNqQyxnQkFBZ0I7RUFDaEIsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsU0FBUztFQUNULHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLFNBQVM7RUFDVCx5QkFBeUI7QUFDM0IiLCJzb3VyY2VzQ29udGVudCI6WyIuaG9tZS1wcmV2aWV3IHtcbiAgYmFja2dyb3VuZC1jb2xvcjogUkdCKDcwLCA2OSwgNjkpO1xuICBtaW4taGVpZ2h0OiAzMHZoO1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgb3ZlcmZsb3cteTogaGlkZGVuO1xufVxuXG4uaG9tZS1wcmV2aWV3IGgzIHtcbiAgbWFyZ2luOiAwO1xuICBjb2xvcjogUkdCKDI0MSwgMjQxLCAyNDEpO1xufVxuXG4uaG9tZS1wcmV2aWV3IGg0IHtcbiAgbWFyZ2luOiAwO1xuICBjb2xvcjogUkdCKDI0MSwgMjQxLCAyNDEpO1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>.crypto-icon {
+  width: 40px;
+  float: left;
+  padding-right: 0.5vw;
+  margin-right: 5px;
+}
+
+.table-atag {
+  text-decoration: none;
+  color: black;
+}
+
+.table-atag h4:hover {
+  color: RGB(153, 153, 153);
+}
+
+#red {
+  color: RGB(215, 86, 69);
+}
+
+#green {
+  color: RGB(83, 184, 143);
+}
+
+.crypto-graph {
+  min-width: 170px;
+}
+
+#red-crypto-graph {
+  filter: invert(53%) sepia(54%) saturate(6847%) hue-rotate(345deg)
+    brightness(99%) contrast(98%);
+}
+
+#green-crypto-graph {
+  filter: invert(77%) sepia(78%) saturate(1584%) hue-rotate(59deg)
+    brightness(97%) contrast(101%);
+}
+
+.home-preview thead th:first-child {
+  position: sticky;
+  left: 0;
+  background-color: RGB(39, 41, 59);
+  z-index: 1;
+}
+
+.home-preview tbody th {
+  position: sticky;
+  left: 0;
+  background-color: RGB(39, 41, 59);
+  z-index: 1;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvY29tcG9uZW50cy9ob21lLXByZXZpZXcvaG9tZS10YWJsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFXO0VBQ1gsV0FBVztFQUNYLG9CQUFvQjtFQUNwQixpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxxQkFBcUI7RUFDckIsWUFBWTtBQUNkOztBQUVBO0VBQ0UseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0UsdUJBQXVCO0FBQ3pCOztBQUVBO0VBQ0Usd0JBQXdCO0FBQzFCOztBQUVBO0VBQ0UsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0U7aUNBQytCO0FBQ2pDOztBQUVBO0VBQ0U7a0NBQ2dDO0FBQ2xDOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLE9BQU87RUFDUCxpQ0FBaUM7RUFDakMsVUFBVTtBQUNaOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLE9BQU87RUFDUCxpQ0FBaUM7RUFDakMsVUFBVTtBQUNaIiwic291cmNlc0NvbnRlbnQiOlsiLmNyeXB0by1pY29uIHtcbiAgd2lkdGg6IDQwcHg7XG4gIGZsb2F0OiBsZWZ0O1xuICBwYWRkaW5nLXJpZ2h0OiAwLjV2dztcbiAgbWFyZ2luLXJpZ2h0OiA1cHg7XG59XG5cbi50YWJsZS1hdGFnIHtcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xuICBjb2xvcjogYmxhY2s7XG59XG5cbi50YWJsZS1hdGFnIGg0OmhvdmVyIHtcbiAgY29sb3I6IFJHQigxNTMsIDE1MywgMTUzKTtcbn1cblxuI3JlZCB7XG4gIGNvbG9yOiBSR0IoMjE1LCA4NiwgNjkpO1xufVxuXG4jZ3JlZW4ge1xuICBjb2xvcjogUkdCKDgzLCAxODQsIDE0Myk7XG59XG5cbi5jcnlwdG8tZ3JhcGgge1xuICBtaW4td2lkdGg6IDE3MHB4O1xufVxuXG4jcmVkLWNyeXB0by1ncmFwaCB7XG4gIGZpbHRlcjogaW52ZXJ0KDUzJSkgc2VwaWEoNTQlKSBzYXR1cmF0ZSg2ODQ3JSkgaHVlLXJvdGF0ZSgzNDVkZWcpXG4gICAgYnJpZ2h0bmVzcyg5OSUpIGNvbnRyYXN0KDk4JSk7XG59XG5cbiNncmVlbi1jcnlwdG8tZ3JhcGgge1xuICBmaWx0ZXI6IGludmVydCg3NyUpIHNlcGlhKDc4JSkgc2F0dXJhdGUoMTU4NCUpIGh1ZS1yb3RhdGUoNTlkZWcpXG4gICAgYnJpZ2h0bmVzcyg5NyUpIGNvbnRyYXN0KDEwMSUpO1xufVxuXG4uaG9tZS1wcmV2aWV3IHRoZWFkIHRoOmZpcnN0LWNoaWxkIHtcbiAgcG9zaXRpb246IHN0aWNreTtcbiAgbGVmdDogMDtcbiAgYmFja2dyb3VuZC1jb2xvcjogUkdCKDM5LCA0MSwgNTkpO1xuICB6LWluZGV4OiAxO1xufVxuXG4uaG9tZS1wcmV2aWV3IHRib2R5IHRoIHtcbiAgcG9zaXRpb246IHN0aWNreTtcbiAgbGVmdDogMDtcbiAgYmFja2dyb3VuZC1jb2xvcjogUkdCKDM5LCA0MSwgNTkpO1xuICB6LWluZGV4OiAxO1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>.top-nav {
+  width: 90vw;
+  background-color: RGB(34, 34, 34);
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.top-nav h3 {
+  margin: 20px;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: RGB(241, 241, 241);
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvY29tcG9uZW50cy90b3AtbmF2L3RvcC1uYXYuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBVztFQUNYLGlDQUFpQztFQUNqQyxpQkFBaUI7RUFDakIsa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsWUFBWTtBQUNkOztBQUVBO0VBQ0UscUJBQXFCO0VBQ3JCLHlCQUF5QjtBQUMzQiIsInNvdXJjZXNDb250ZW50IjpbIi50b3AtbmF2IHtcbiAgd2lkdGg6IDkwdnc7XG4gIGJhY2tncm91bmQtY29sb3I6IFJHQigzNCwgMzQsIDM0KTtcbiAgcGFkZGluZy1sZWZ0OiA1dnc7XG4gIHBhZGRpbmctcmlnaHQ6IDV2dztcbn1cblxuLnRvcC1uYXYgaDMge1xuICBtYXJnaW46IDIwcHg7XG59XG5cbi50b3AtbmF2IGEge1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gIGNvbG9yOiBSR0IoMjQxLCAyNDEsIDI0MSk7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>/*
+ * Container style
+ */
+.ps {
+  overflow: hidden !important;
+  overflow-anchor: none;
+  -ms-overflow-style: none;
+  touch-action: auto;
+  -ms-touch-action: auto;
+}
+
+/*
+ * Scrollbar rail styles
+ */
+.ps__rail-x {
+  display: none;
+  opacity: 0;
+  transition: background-color .2s linear, opacity .2s linear;
+  -webkit-transition: background-color .2s linear, opacity .2s linear;
+  height: 15px;
+  /* there must be 'bottom' or 'top' for ps__rail-x */
+  bottom: 0px;
+  /* please don't change 'position' */
+  position: absolute;
+}
+
+.ps__rail-y {
+  display: none;
+  opacity: 0;
+  transition: background-color .2s linear, opacity .2s linear;
+  -webkit-transition: background-color .2s linear, opacity .2s linear;
+  width: 15px;
+  /* there must be 'right' or 'left' for ps__rail-y */
+  right: 0;
+  /* please don't change 'position' */
+  position: absolute;
+}
+
+.ps--active-x > .ps__rail-x,
+.ps--active-y > .ps__rail-y {
+  display: block;
+  background-color: transparent;
+}
+
+.ps:hover > .ps__rail-x,
+.ps:hover > .ps__rail-y,
+.ps--focus > .ps__rail-x,
+.ps--focus > .ps__rail-y,
+.ps--scrolling-x > .ps__rail-x,
+.ps--scrolling-y > .ps__rail-y {
+  opacity: 0.6;
+}
+
+.ps .ps__rail-x:hover,
+.ps .ps__rail-y:hover,
+.ps .ps__rail-x:focus,
+.ps .ps__rail-y:focus,
+.ps .ps__rail-x.ps--clicking,
+.ps .ps__rail-y.ps--clicking {
+  background-color: #eee;
+  opacity: 0.9;
+}
+
+/*
+ * Scrollbar thumb styles
+ */
+.ps__thumb-x {
+  background-color: #aaa;
+  border-radius: 6px;
+  transition: background-color .2s linear, height .2s ease-in-out;
+  -webkit-transition: background-color .2s linear, height .2s ease-in-out;
+  height: 6px;
+  /* there must be 'bottom' for ps__thumb-x */
+  bottom: 2px;
+  /* please don't change 'position' */
+  position: absolute;
+}
+
+.ps__thumb-y {
+  background-color: #aaa;
+  border-radius: 6px;
+  transition: background-color .2s linear, width .2s ease-in-out;
+  -webkit-transition: background-color .2s linear, width .2s ease-in-out;
+  width: 6px;
+  /* there must be 'right' for ps__thumb-y */
+  right: 2px;
+  /* please don't change 'position' */
+  position: absolute;
+}
+
+.ps__rail-x:hover > .ps__thumb-x,
+.ps__rail-x:focus > .ps__thumb-x,
+.ps__rail-x.ps--clicking .ps__thumb-x {
+  background-color: #999;
+  height: 11px;
+}
+
+.ps__rail-y:hover > .ps__thumb-y,
+.ps__rail-y:focus > .ps__thumb-y,
+.ps__rail-y.ps--clicking .ps__thumb-y {
+  background-color: #999;
+  width: 11px;
+}
+
+/* MS supports */
+@supports (-ms-overflow-style: none) {
+  .ps {
+    overflow: auto !important;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ps {
+    overflow: auto !important;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9ub2RlX21vZHVsZXMvcGVyZmVjdC1zY3JvbGxiYXIvY3NzL3BlcmZlY3Qtc2Nyb2xsYmFyLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7RUFFRTtBQUNGO0VBQ0UsMkJBQTJCO0VBQzNCLHFCQUFxQjtFQUNyQix3QkFBd0I7RUFDeEIsa0JBQWtCO0VBQ2xCLHNCQUFzQjtBQUN4Qjs7QUFFQTs7RUFFRTtBQUNGO0VBQ0UsYUFBYTtFQUNiLFVBQVU7RUFDViwyREFBMkQ7RUFDM0QsbUVBQW1FO0VBQ25FLFlBQVk7RUFDWixtREFBbUQ7RUFDbkQsV0FBVztFQUNYLG1DQUFtQztFQUNuQyxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxhQUFhO0VBQ2IsVUFBVTtFQUNWLDJEQUEyRDtFQUMzRCxtRUFBbUU7RUFDbkUsV0FBVztFQUNYLG1EQUFtRDtFQUNuRCxRQUFRO0VBQ1IsbUNBQW1DO0VBQ25DLGtCQUFrQjtBQUNwQjs7QUFFQTs7RUFFRSxjQUFjO0VBQ2QsNkJBQTZCO0FBQy9COztBQUVBOzs7Ozs7RUFNRSxZQUFZO0FBQ2Q7O0FBRUE7Ozs7OztFQU1FLHNCQUFzQjtFQUN0QixZQUFZO0FBQ2Q7O0FBRUE7O0VBRUU7QUFDRjtFQUNFLHNCQUFzQjtFQUN0QixrQkFBa0I7RUFDbEIsK0RBQStEO0VBQy9ELHVFQUF1RTtFQUN2RSxXQUFXO0VBQ1gsMkNBQTJDO0VBQzNDLFdBQVc7RUFDWCxtQ0FBbUM7RUFDbkMsa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0Usc0JBQXNCO0VBQ3RCLGtCQUFrQjtFQUNsQiw4REFBOEQ7RUFDOUQsc0VBQXNFO0VBQ3RFLFVBQVU7RUFDViwwQ0FBMEM7RUFDMUMsVUFBVTtFQUNWLG1DQUFtQztFQUNuQyxrQkFBa0I7QUFDcEI7O0FBRUE7OztFQUdFLHNCQUFzQjtFQUN0QixZQUFZO0FBQ2Q7O0FBRUE7OztFQUdFLHNCQUFzQjtFQUN0QixXQUFXO0FBQ2I7O0FBRUEsZ0JBQWdCO0FBQ2hCO0VBQ0U7SUFDRSx5QkFBeUI7RUFDM0I7QUFDRjs7QUFFQTtFQUNFO0lBQ0UseUJBQXlCO0VBQzNCO0FBQ0YiLCJzb3VyY2VzQ29udGVudCI6WyIvKlxuICogQ29udGFpbmVyIHN0eWxlXG4gKi9cbi5wcyB7XG4gIG92ZXJmbG93OiBoaWRkZW4gIWltcG9ydGFudDtcbiAgb3ZlcmZsb3ctYW5jaG9yOiBub25lO1xuICAtbXMtb3ZlcmZsb3ctc3R5bGU6IG5vbmU7XG4gIHRvdWNoLWFjdGlvbjogYXV0bztcbiAgLW1zLXRvdWNoLWFjdGlvbjogYXV0bztcbn1cblxuLypcbiAqIFNjcm9sbGJhciByYWlsIHN0eWxlc1xuICovXG4ucHNfX3JhaWwteCB7XG4gIGRpc3BsYXk6IG5vbmU7XG4gIG9wYWNpdHk6IDA7XG4gIHRyYW5zaXRpb246IGJhY2tncm91bmQtY29sb3IgLjJzIGxpbmVhciwgb3BhY2l0eSAuMnMgbGluZWFyO1xuICAtd2Via2l0LXRyYW5zaXRpb246IGJhY2tncm91bmQtY29sb3IgLjJzIGxpbmVhciwgb3BhY2l0eSAuMnMgbGluZWFyO1xuICBoZWlnaHQ6IDE1cHg7XG4gIC8qIHRoZXJlIG11c3QgYmUgJ2JvdHRvbScgb3IgJ3RvcCcgZm9yIHBzX19yYWlsLXggKi9cbiAgYm90dG9tOiAwcHg7XG4gIC8qIHBsZWFzZSBkb24ndCBjaGFuZ2UgJ3Bvc2l0aW9uJyAqL1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG59XG5cbi5wc19fcmFpbC15IHtcbiAgZGlzcGxheTogbm9uZTtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogYmFja2dyb3VuZC1jb2xvciAuMnMgbGluZWFyLCBvcGFjaXR5IC4ycyBsaW5lYXI7XG4gIC13ZWJraXQtdHJhbnNpdGlvbjogYmFja2dyb3VuZC1jb2xvciAuMnMgbGluZWFyLCBvcGFjaXR5IC4ycyBsaW5lYXI7XG4gIHdpZHRoOiAxNXB4O1xuICAvKiB0aGVyZSBtdXN0IGJlICdyaWdodCcgb3IgJ2xlZnQnIGZvciBwc19fcmFpbC15ICovXG4gIHJpZ2h0OiAwO1xuICAvKiBwbGVhc2UgZG9uJ3QgY2hhbmdlICdwb3NpdGlvbicgKi9cbiAgcG9zaXRpb246IGFic29sdXRlO1xufVxuXG4ucHMtLWFjdGl2ZS14ID4gLnBzX19yYWlsLXgsXG4ucHMtLWFjdGl2ZS15ID4gLnBzX19yYWlsLXkge1xuICBkaXNwbGF5OiBibG9jaztcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG59XG5cbi5wczpob3ZlciA+IC5wc19fcmFpbC14LFxuLnBzOmhvdmVyID4gLnBzX19yYWlsLXksXG4ucHMtLWZvY3VzID4gLnBzX19yYWlsLXgsXG4ucHMtLWZvY3VzID4gLnBzX19yYWlsLXksXG4ucHMtLXNjcm9sbGluZy14ID4gLnBzX19yYWlsLXgsXG4ucHMtLXNjcm9sbGluZy15ID4gLnBzX19yYWlsLXkge1xuICBvcGFjaXR5OiAwLjY7XG59XG5cbi5wcyAucHNfX3JhaWwteDpob3Zlcixcbi5wcyAucHNfX3JhaWwteTpob3Zlcixcbi5wcyAucHNfX3JhaWwteDpmb2N1cyxcbi5wcyAucHNfX3JhaWwteTpmb2N1cyxcbi5wcyAucHNfX3JhaWwteC5wcy0tY2xpY2tpbmcsXG4ucHMgLnBzX19yYWlsLXkucHMtLWNsaWNraW5nIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2VlZTtcbiAgb3BhY2l0eTogMC45O1xufVxuXG4vKlxuICogU2Nyb2xsYmFyIHRodW1iIHN0eWxlc1xuICovXG4ucHNfX3RodW1iLXgge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjYWFhO1xuICBib3JkZXItcmFkaXVzOiA2cHg7XG4gIHRyYW5zaXRpb246IGJhY2tncm91bmQtY29sb3IgLjJzIGxpbmVhciwgaGVpZ2h0IC4ycyBlYXNlLWluLW91dDtcbiAgLXdlYmtpdC10cmFuc2l0aW9uOiBiYWNrZ3JvdW5kLWNvbG9yIC4ycyBsaW5lYXIsIGhlaWdodCAuMnMgZWFzZS1pbi1vdXQ7XG4gIGhlaWdodDogNnB4O1xuICAvKiB0aGVyZSBtdXN0IGJlICdib3R0b20nIGZvciBwc19fdGh1bWIteCAqL1xuICBib3R0b206IDJweDtcbiAgLyogcGxlYXNlIGRvbid0IGNoYW5nZSAncG9zaXRpb24nICovXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbn1cblxuLnBzX190aHVtYi15IHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2FhYTtcbiAgYm9yZGVyLXJhZGl1czogNnB4O1xuICB0cmFuc2l0aW9uOiBiYWNrZ3JvdW5kLWNvbG9yIC4ycyBsaW5lYXIsIHdpZHRoIC4ycyBlYXNlLWluLW91dDtcbiAgLXdlYmtpdC10cmFuc2l0aW9uOiBiYWNrZ3JvdW5kLWNvbG9yIC4ycyBsaW5lYXIsIHdpZHRoIC4ycyBlYXNlLWluLW91dDtcbiAgd2lkdGg6IDZweDtcbiAgLyogdGhlcmUgbXVzdCBiZSAncmlnaHQnIGZvciBwc19fdGh1bWIteSAqL1xuICByaWdodDogMnB4O1xuICAvKiBwbGVhc2UgZG9uJ3QgY2hhbmdlICdwb3NpdGlvbicgKi9cbiAgcG9zaXRpb246IGFic29sdXRlO1xufVxuXG4ucHNfX3JhaWwteDpob3ZlciA+IC5wc19fdGh1bWIteCxcbi5wc19fcmFpbC14OmZvY3VzID4gLnBzX190aHVtYi14LFxuLnBzX19yYWlsLXgucHMtLWNsaWNraW5nIC5wc19fdGh1bWIteCB7XG4gIGJhY2tncm91bmQtY29sb3I6ICM5OTk7XG4gIGhlaWdodDogMTFweDtcbn1cblxuLnBzX19yYWlsLXk6aG92ZXIgPiAucHNfX3RodW1iLXksXG4ucHNfX3JhaWwteTpmb2N1cyA+IC5wc19fdGh1bWIteSxcbi5wc19fcmFpbC15LnBzLS1jbGlja2luZyAucHNfX3RodW1iLXkge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjOTk5O1xuICB3aWR0aDogMTFweDtcbn1cblxuLyogTVMgc3VwcG9ydHMgKi9cbkBzdXBwb3J0cyAoLW1zLW92ZXJmbG93LXN0eWxlOiBub25lKSB7XG4gIC5wcyB7XG4gICAgb3ZlcmZsb3c6IGF1dG8gIWltcG9ydGFudDtcbiAgfVxufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAoLW1zLWhpZ2gtY29udHJhc3Q6IGFjdGl2ZSksICgtbXMtaGlnaC1jb250cmFzdDogbm9uZSkge1xuICAucHMge1xuICAgIG92ZXJmbG93OiBhdXRvICFpbXBvcnRhbnQ7XG4gIH1cbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style><style data-jss="" data-meta="MuiInputBase">
+@-webkit-keyframes mui-auto-fill {}
+@-webkit-keyframes mui-auto-fill-cancel {}
+.MuiInputBase-root {
+  color: rgba(0, 0, 0, 0.87);
+  cursor: text;
+  display: inline-flex;
+  position: relative;
+  font-size: 1rem;
+  box-sizing: border-box;
+  align-items: center;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.1876em;
+  letter-spacing: 0.00938em;
+}
+.MuiInputBase-root.Mui-disabled {
+  color: rgba(0, 0, 0, 0.38);
+  cursor: default;
+}
+.MuiInputBase-multiline {
+  padding: 6px 0 7px;
+}
+.MuiInputBase-multiline.MuiInputBase-marginDense {
+  padding-top: 3px;
+}
+.MuiInputBase-fullWidth {
+  width: 100%;
+}
+.MuiInputBase-input {
+  font: inherit;
+  color: currentColor;
+  width: 100%;
+  border: 0;
+  height: 1.1876em;
+  margin: 0;
+  display: block;
+  padding: 6px 0 7px;
+  min-width: 0;
+  background: none;
+  box-sizing: content-box;
+  animation-name: mui-auto-fill-cancel;
+  letter-spacing: inherit;
+  animation-duration: 10ms;
+  -webkit-tap-highlight-color: transparent;
+}
+.MuiInputBase-input::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBase-input::-moz-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBase-input:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBase-input::-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBase-input:focus {
+  outline: 0;
+}
+.MuiInputBase-input:invalid {
+  box-shadow: none;
+}
+.MuiInputBase-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.MuiInputBase-input.Mui-disabled {
+  opacity: 1;
+}
+.MuiInputBase-input:-webkit-autofill {
+  animation-name: mui-auto-fill;
+  animation-duration: 5000s;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input::-webkit-input-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input::-moz-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:-ms-input-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input::-ms-input-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus::-webkit-input-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus::-moz-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus:-ms-input-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus::-ms-input-placeholder {
+  opacity: 0.42;
+}
+.MuiInputBase-inputMarginDense {
+  padding-top: 3px;
+}
+.MuiInputBase-inputMultiline {
+  height: auto;
+  resize: none;
+  padding: 0;
+}
+.MuiInputBase-inputTypeSearch {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+}
+</style><style data-jss="" data-meta="PrivateNotchedOutline">
+.PrivateNotchedOutline-root-2 {
+  top: -5px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0 8px;
+  overflow: hidden;
+  position: absolute;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.PrivateNotchedOutline-legend-3 {
+  padding: 0;
+  text-align: left;
+  transition: width 150ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  line-height: 11px;
+}
+.PrivateNotchedOutline-legendLabelled-4 {
+  width: auto;
+  height: 11px;
+  display: block;
+  padding: 0;
+  font-size: 0.75em;
+  max-width: 0.01px;
+  text-align: left;
+  transition: max-width 50ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  visibility: hidden;
+}
+.PrivateNotchedOutline-legendLabelled-4 > span {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.PrivateNotchedOutline-legendNotched-5 {
+  max-width: 1000px;
+  transition: max-width 100ms cubic-bezier(0.0, 0, 0.2, 1) 50ms;
+}
+</style><style data-jss="" data-meta="MuiOutlinedInput">
+.MuiOutlinedInput-root {
+  position: relative;
+  border-radius: 4px;
+}
+.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(0, 0, 0, 0.87);
+}
+@media (hover: none) {
+  .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(0, 0, 0, 0.23);
+  }
+}
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #3f51b5;
+  border-width: 2px;
+}
+.MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+  border-color: #f44336;
+}
+.MuiOutlinedInput-root.Mui-disabled .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(0, 0, 0, 0.26);
+}
+.MuiOutlinedInput-colorSecondary.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #f50057;
+}
+.MuiOutlinedInput-adornedStart {
+  padding-left: 14px;
+}
+.MuiOutlinedInput-adornedEnd {
+  padding-right: 14px;
+}
+.MuiOutlinedInput-multiline {
+  padding: 18.5px 14px;
+}
+.MuiOutlinedInput-multiline.MuiOutlinedInput-marginDense {
+  padding-top: 10.5px;
+  padding-bottom: 10.5px;
+}
+.MuiOutlinedInput-notchedOutline {
+  border-color: rgba(0, 0, 0, 0.23);
+}
+.MuiOutlinedInput-input {
+  padding: 18.5px 14px;
+}
+.MuiOutlinedInput-input:-webkit-autofill {
+  border-radius: inherit;
+}
+.MuiOutlinedInput-inputMarginDense {
+  padding-top: 10.5px;
+  padding-bottom: 10.5px;
+}
+.MuiOutlinedInput-inputMultiline {
+  padding: 0;
+}
+.MuiOutlinedInput-inputAdornedStart {
+  padding-left: 0;
+}
+.MuiOutlinedInput-inputAdornedEnd {
+  padding-right: 0;
+}
+</style><style data-jss="" data-meta="MuiFormLabel">
+.MuiFormLabel-root {
+  color: rgba(0, 0, 0, 0.54);
+  padding: 0;
+  font-size: 1rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.00938em;
+}
+.MuiFormLabel-root.Mui-focused {
+  color: #3f51b5;
+}
+.MuiFormLabel-root.Mui-disabled {
+  color: rgba(0, 0, 0, 0.38);
+}
+.MuiFormLabel-root.Mui-error {
+  color: #f44336;
+}
+.MuiFormLabel-colorSecondary.Mui-focused {
+  color: #f50057;
+}
+.MuiFormLabel-asterisk.Mui-error {
+  color: #f44336;
+}
+</style><style data-jss="" data-meta="MuiInputLabel">
+.MuiInputLabel-root {
+  display: block;
+  transform-origin: top left;
+}
+.MuiInputLabel-formControl {
+  top: 0;
+  left: 0;
+  position: absolute;
+  transform: translate(0, 24px) scale(1);
+}
+.MuiInputLabel-marginDense {
+  transform: translate(0, 21px) scale(1);
+}
+.MuiInputLabel-shrink {
+  transform: translate(0, 1.5px) scale(0.75);
+  transform-origin: top left;
+}
+.MuiInputLabel-animated {
+  transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+}
+.MuiInputLabel-filled {
+  z-index: 1;
+  transform: translate(12px, 20px) scale(1);
+  pointer-events: none;
+}
+.MuiInputLabel-filled.MuiInputLabel-marginDense {
+  transform: translate(12px, 17px) scale(1);
+}
+.MuiInputLabel-filled.MuiInputLabel-shrink {
+  transform: translate(12px, 10px) scale(0.75);
+}
+.MuiInputLabel-filled.MuiInputLabel-shrink.MuiInputLabel-marginDense {
+  transform: translate(12px, 7px) scale(0.75);
+}
+.MuiInputLabel-outlined {
+  z-index: 1;
+  transform: translate(14px, 20px) scale(1);
+  pointer-events: none;
+}
+.MuiInputLabel-outlined.MuiInputLabel-marginDense {
+  transform: translate(14px, 12px) scale(1);
+}
+.MuiInputLabel-outlined.MuiInputLabel-shrink {
+  transform: translate(14px, -6px) scale(0.75);
+}
+</style><style data-jss="" data-meta="MuiFormControl">
+.MuiFormControl-root {
+  border: 0;
+  margin: 0;
+  display: inline-flex;
+  padding: 0;
+  position: relative;
+  min-width: 0;
+  flex-direction: column;
+  vertical-align: top;
+}
+.MuiFormControl-marginNormal {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+.MuiFormControl-marginDense {
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+.MuiFormControl-fullWidth {
+  width: 100%;
+}
+</style><style data-jss="" data-meta="MuiTextField">
+
+</style><style data-jss="" data-meta="makeStyles">
+.makeStyles-root-1 {
+  multiline-color: [object Object];
+}
+.makeStyles-root-1 > * {
+  margin: 24px;
+}
+.makeStyles-root-1 label {
+  color: RGB(241, 241, 241);
+}
+.makeStyles-root-1 label.Mui-focused {
+  color: RGB(241, 241, 241);
+}
+.makeStyles-root-1 .MuiInput-underline:after {
+  border-bottom-color: RGB(78, 134, 169);
+}
+.makeStyles-root-1 .MuiOutlinedInput-root {
+  width: min(max(200px, 80vw), 600px);
+}
+.makeStyles-root-1 .MuiOutlinedInput-root fieldset {
+  border-color: RGB(241, 241, 241);
+}
+.makeStyles-root-1 .MuiOutlinedInput-root:hover fieldset {
+  border-color: RGB(153, 153, 153);
+}
+.makeStyles-root-1 .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: RGB(78, 134, 169);
+}
+</style><style data-jss="" data-meta="MuiTable">
+.MuiTable-root {
+  width: 100%;
+  display: table;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+.MuiTable-root caption {
+  color: rgba(0, 0, 0, 0.54);
+  padding: 16px;
+  font-size: 0.875rem;
+  text-align: left;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.43;
+  caption-side: bottom;
+  letter-spacing: 0.01071em;
+}
+.MuiTable-stickyHeader {
+  border-collapse: separate;
+}
+</style><style data-jss="" data-meta="MuiTableBody">
+.MuiTableBody-root {
+  display: table-row-group;
+}
+</style><style data-jss="" data-meta="MuiTableCell">
+.MuiTableCell-root {
+  display: table-cell;
+  padding: 16px;
+  font-size: 0.875rem;
+  text-align: left;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.43;
+  border-bottom: 1px solid
+    rgba(224, 224, 224, 1);
+  letter-spacing: 0.01071em;
+  vertical-align: inherit;
+}
+.MuiTableCell-head {
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+.MuiTableCell-body {
+  color: rgba(0, 0, 0, 0.87);
+}
+.MuiTableCell-footer {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 0.75rem;
+  line-height: 1.3125rem;
+}
+.MuiTableCell-sizeSmall {
+  padding: 6px 24px 6px 16px;
+}
+.MuiTableCell-sizeSmall:last-child {
+  padding-right: 16px;
+}
+.MuiTableCell-sizeSmall.MuiTableCell-paddingCheckbox {
+  width: 24px;
+  padding: 0 12px 0 16px;
+}
+.MuiTableCell-sizeSmall.MuiTableCell-paddingCheckbox:last-child {
+  padding-left: 12px;
+  padding-right: 16px;
+}
+.MuiTableCell-sizeSmall.MuiTableCell-paddingCheckbox > * {
+  padding: 0;
+}
+.MuiTableCell-paddingCheckbox {
+  width: 48px;
+  padding: 0 0 0 4px;
+}
+.MuiTableCell-paddingCheckbox:last-child {
+  padding-left: 0;
+  padding-right: 4px;
+}
+.MuiTableCell-paddingNone {
+  padding: 0;
+}
+.MuiTableCell-paddingNone:last-child {
+  padding: 0;
+}
+.MuiTableCell-alignLeft {
+  text-align: left;
+}
+.MuiTableCell-alignCenter {
+  text-align: center;
+}
+.MuiTableCell-alignRight {
+  text-align: right;
+  flex-direction: row-reverse;
+}
+.MuiTableCell-alignJustify {
+  text-align: justify;
+}
+.MuiTableCell-stickyHeader {
+  top: 0;
+  left: 0;
+  z-index: 2;
+  position: sticky;
+  background-color: #fafafa;
+}
+</style><style data-jss="" data-meta="MuiTableHead">
+.MuiTableHead-root {
+  display: table-header-group;
+}
+</style><style data-jss="" data-meta="MuiTableRow">
+.MuiTableRow-root {
+  color: inherit;
+  display: table-row;
+  outline: 0;
+  vertical-align: middle;
+}
+.MuiTableRow-root.MuiTableRow-hover:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.MuiTableRow-root.Mui-selected, .MuiTableRow-root.Mui-selected:hover {
+  background-color: rgba(245, 0, 87, 0.08);
+}
+</style><style data-jss="" data-meta="makeStyles">
+.makeStyles-table-6 {
+  background: RGB(39,41,59);
+}
+</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="top-nav" style="display: flex; justify-content: flex-end; align-items: center;"><a href="http://localhost:3000/"><h3>Logo</h3></a><a href="http://localhost:3000/about"><h3>About</h3></a></div><div class="top-search" style="border-bottom: 2px solid white;"><h4>Why is <span class="top-search-name"><div class="text-transition " style="width: 195px; white-space: nowrap; display: inline-block; position: relative;"><span class="text-transition_placeholder" style="visibility: hidden;">Binance Coin's</span><div class="text-transition_inner" style="overflow: visible; display: block; position: absolute; top: 0px; left: 0px; height: 100%; width: 100%;"><div style="opacity: 1; transform: translateY(0%); position: absolute;">Binance Coin's</div></div></div></span> price going <span class="top-search-up"><div class="text-transition " style="width: 34px; white-space: nowrap; display: inline-block; position: relative;"><span class="text-transition_placeholder" style="visibility: hidden;">up</span><div class="text-transition_inner" style="overflow: visible; display: block; position: absolute; top: 0px; left: 0px; height: 100%; width: 100%;"><div style="opacity: 1; transform: translateY(0%); position: absolute;">up</div></div></div></span>?</h4><div class="MuiFormControl-root MuiTextField-root makeStyles-root-1"><label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-marginDense MuiInputLabel-outlined" data-shrink="false" for="standard-basic" id="standard-basic-label">Search Ticker</label><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"><input aria-invalid="false" id="standard-basic" type="search" class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputTypeSearch MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense" value=""><fieldset aria-hidden="true" class="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"><legend class="PrivateNotchedOutline-legendLabelled-4"><span>Search Ticker</span></legend></fieldset></div></div></div><div class="home-preview"><div style="margin: 5vw; border-radius: 30px; width: min(800px, 90vw); min-height: 200px; background-color: rgb(39, 41, 59); padding: 15px; box-shadow: rgba(0, 0, 0, 0.3) 5px 5px 15px 5px; overflow-y: hidden;"><h3 style="text-decoration: underline;">Quick Stats</h3><div style="overflow-y: hidden;"><table class="MuiTable-root makeStyles-table-6" aria-label="simple table"><thead class="MuiTableHead-root"><tr class="MuiTableRow-root MuiTableRow-head"><th class="MuiTableCell-root MuiTableCell-head" scope="col"><h3 style="margin: 0px; color: rgb(241, 241, 241);">Name</h3></th><th class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight" scope="col"><h3 style="margin: 0px; color: rgb(241, 241, 241);">Price</h3></th><th class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight" scope="col"><h3 style="margin: 0px; color: rgb(241, 241, 241);">1h%</h3></th><th class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight" scope="col"><h3 style="margin: 0px; color: rgb(241, 241, 241);">24h%</h3></th><th class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight" scope="col" style="min-width: 170px;"><h3 style="margin: 0px; color: rgb(241, 241, 241);">7 Day Graph</h3></th><th class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight" scope="col"><h3 style="margin: 0px; color: rgb(241, 241, 241);">Sentiment</h3></th></tr></thead><tbody class="MuiTableBody-root"><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/1.png"></span><span><a href="http://localhost:3000/ticker/BTC" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Bitcoin</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">1</div></span><span style="color: rgb(241, 241, 241);">BTC</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$45,146.96</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.8%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+1.75%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/1(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/1027.png"></span><span><a href="http://localhost:3000/ticker/ETH" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Ethereum</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">2</div></span><span style="color: rgb(241, 241, 241);">ETH</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$3,488.68</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-1.25%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+1.89%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/1027(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/1839.png"></span><span><a href="http://localhost:3000/ticker/BNB" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Binance Coin</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">3</div></span><span style="color: rgb(241, 241, 241);">BNB</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$527.1</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.68%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+0.63%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/1839(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/2010.png"></span><span><a href="http://localhost:3000/ticker/ADA" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Cardano</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">4</div></span><span style="color: rgb(241, 241, 241);">ADA</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$2.11</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.54%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-2.33%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="green-crypto-graph" src="./App Title_files/2010(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/74.png"></span><span><a href="http://localhost:3000/ticker/DOGE" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Dogecoin</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">5</div></span><span style="color: rgb(241, 241, 241);">DOGE</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$0.495</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.72%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+0.9%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="green-crypto-graph" src="./App Title_files/74(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/825.png"></span><span><a href="http://localhost:3000/ticker/USDT" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Tether</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">6</div></span><span style="color: rgb(241, 241, 241);">USDT</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$1</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+0.01%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+0.16%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="green-crypto-graph" src="./App Title_files/825(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/52.png"></span><span><a href="http://localhost:3000/ticker/XRP" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> XRP</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">7</div></span><span style="color: rgb(241, 241, 241);">XRP</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$1.52</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.84%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+7.44%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="green-crypto-graph" src="./App Title_files/52(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/6636.png"></span><span><a href="http://localhost:3000/ticker/DOT" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Polkadot</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">8</div></span><span style="color: rgb(241, 241, 241);">DOT</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$40.88</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-1.49%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+4.44%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="green-crypto-graph" src="./App Title_files/6636(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/8916.png"></span><span><a href="http://localhost:3000/ticker/ICP" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Internet Computer</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">9</div></span><span style="color: rgb(241, 241, 241);">ICP</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$201.32</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+1.39%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-6.92%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/8916(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/1831.png"></span><span><a href="http://localhost:3000/ticker/BCH" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Bitcoin Cash</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">10</div></span><span style="color: rgb(241, 241, 241);">BCH</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$1,126.23</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.86%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+4.36%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/1831(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/2.png"></span><span><a href="http://localhost:3000/ticker/LTC" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Litecoin</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">11</div></span><span style="color: rgb(241, 241, 241);">LTC</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$304.78</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.71%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+7.24%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/2(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/7083.png"></span><span><a href="http://localhost:3000/ticker/UNI" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Uniswap</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">12</div></span><span style="color: rgb(241, 241, 241);">UNI</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$35.84</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.42%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+3.95%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/7083(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/1975.png"></span><span><a href="http://localhost:3000/ticker/LINK" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Chainlink</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">13</div></span><span style="color: rgb(241, 241, 241);">LINK</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$40.04</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.52%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+4.02%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/1975(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/512.png"></span><span><a href="http://localhost:3000/ticker/XLM" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Stellar</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">14</div></span><span style="color: rgb(241, 241, 241);">XLM</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$0.6646</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.71%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-1.46%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="green-crypto-graph" src="./App Title_files/512(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/3408.png"></span><span><a href="http://localhost:3000/ticker/USDC" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> USD Coin</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">15</div></span><span style="color: rgb(241, 241, 241);">USDC</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$1</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+0.05%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+0.08%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="green-crypto-graph" src="./App Title_files/3408(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/5426.png"></span><span><a href="http://localhost:3000/ticker/SOL" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Solana</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">16</div></span><span style="color: rgb(241, 241, 241);">SOL</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$50.39</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+1.6%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+0.6%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="green-crypto-graph" src="./App Title_files/5426(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/3890.png"></span><span><a href="http://localhost:3000/ticker/MATIC" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Polygon</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">17</div></span><span style="color: rgb(241, 241, 241);">MATIC</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$2.13</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-2.08%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+33.07%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="green-crypto-graph" src="./App Title_files/3890(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/3077.png"></span><span><a href="http://localhost:3000/ticker/VET" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> VeChain</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">18</div></span><span style="color: rgb(241, 241, 241);">VET</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$0.168</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-1.8%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+1.68%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/3077(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/1321.png"></span><span><a href="http://localhost:3000/ticker/ETC" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Ethereum Classic</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">19</div></span><span style="color: rgb(241, 241, 241);">ETC</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$92.28</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.9%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+2.45%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/1321(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/2416.png"></span><span><a href="http://localhost:3000/ticker/THETA" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> THETA</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">20</div></span><span style="color: rgb(241, 241, 241);">THETA</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$10.09</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.62%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+7.54%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/2416(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/1765.png"></span><span><a href="http://localhost:3000/ticker/EOS" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> EOS</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">21</div></span><span style="color: rgb(241, 241, 241);">EOS</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$9.53</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-1.01%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+1.42%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="green-crypto-graph" src="./App Title_files/1765(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/1958.png"></span><span><a href="http://localhost:3000/ticker/TRX" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> TRON</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">22</div></span><span style="color: rgb(241, 241, 241);">TRX</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$0.1172</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.96%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+2.33%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/1958(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/7278.png"></span><span><a href="http://localhost:3000/ticker/AAVE" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Aave</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">23</div></span><span style="color: rgb(241, 241, 241);">AAVE</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$655.32</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+0.74%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+21.9%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="green-crypto-graph" src="./App Title_files/7278(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/3717.png"></span><span><a href="http://localhost:3000/ticker/WBTC" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Wrapped Bitcoin</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">24</div></span><span style="color: rgb(241, 241, 241);">WBTC</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$45,105.94</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-1.05%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+1.45%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/3717(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/4687.png"></span><span><a href="http://localhost:3000/ticker/BUSD" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Binance USD</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">25</div></span><span style="color: rgb(241, 241, 241);">BUSD</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$1</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+0.03%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+0.06%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="green-crypto-graph" src="./App Title_files/4687(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/2280.png"></span><span><a href="http://localhost:3000/ticker/FIL" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Filecoin</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">26</div></span><span style="color: rgb(241, 241, 241);">FIL</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$103.95</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.82%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+1.47%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/2280(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/5994.png"></span><span><a href="http://localhost:3000/ticker/SHIB" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> SHIBA INU</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">27</div></span><span style="color: rgb(241, 241, 241);">SHIB</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$0.0000171</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-1.11%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+9.52%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/5994(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/328.png"></span><span><a href="http://localhost:3000/ticker/XMR" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Monero</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">28</div></span><span style="color: rgb(241, 241, 241);">XMR</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$353.33</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.66%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-1.44%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/328(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/1376.png"></span><span><a href="http://localhost:3000/ticker/NEO" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Neo</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">29</div></span><span style="color: rgb(241, 241, 241);">NEO</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$89.76</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.91%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+2.65%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/1376(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/4172.png"></span><span><a href="http://localhost:3000/ticker/LUNA" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Terra</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">30</div></span><span style="color: rgb(241, 241, 241);">LUNA</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$15.53</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.14%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+1.57%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/4172(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/1720.png"></span><span><a href="http://localhost:3000/ticker/MIOTA" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> IOTA</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">31</div></span><span style="color: rgb(241, 241, 241);">MIOTA</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$2.01</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+0.12%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+4.28%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/1720(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/3602.png"></span><span><a href="http://localhost:3000/ticker/BSV" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Bitcoin SV</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">32</div></span><span style="color: rgb(241, 241, 241);">BSV</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$291.05</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-1.21%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+2.15%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/3602(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/4256.png"></span><span><a href="http://localhost:3000/ticker/KLAY" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Klaytn</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">33</div></span><span style="color: rgb(241, 241, 241);">KLAY</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$2.21</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-1.17%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-1.41%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="green-crypto-graph" src="./App Title_files/4256(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/5034.png"></span><span><a href="http://localhost:3000/ticker/KSM" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Kusama</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">34</div></span><span style="color: rgb(241, 241, 241);">KSM</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$609.19</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.96%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+8.62%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="green-crypto-graph" src="./App Title_files/5034(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/2502.png"></span><span><a href="http://localhost:3000/ticker/HT" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Huobi Token</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">35</div></span><span style="color: rgb(241, 241, 241);">HT</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$29.2</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+0.11%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+6.98%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/2502(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/4195.png"></span><span><a href="http://localhost:3000/ticker/FTT" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> FTX Token</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">36</div></span><span style="color: rgb(241, 241, 241);">FTT</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$52.96</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.73%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+3.51%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/4195(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/4943.png"></span><span><a href="http://localhost:3000/ticker/DAI" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Dai</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">37</div></span><span style="color: rgb(241, 241, 241);">DAI</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$1</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+0.03%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+0.09%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="green-crypto-graph" src="./App Title_files/4943(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/1518.png"></span><span><a href="http://localhost:3000/ticker/MKR" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Maker</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">38</div></span><span style="color: rgb(241, 241, 241);">MKR</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$4,885.93</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+1.29%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+8.93%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/1518(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/2011.png"></span><span><a href="http://localhost:3000/ticker/XTZ" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Tezos</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">39</div></span><span style="color: rgb(241, 241, 241);">XTZ</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$5.49</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.6%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+1.52%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/2011(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/3794.png"></span><span><a href="http://localhost:3000/ticker/ATOM" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Cosmos</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">40</div></span><span style="color: rgb(241, 241, 241);">ATOM</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$22.74</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-1.35%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-1.07%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/3794(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/4157.png"></span><span><a href="http://localhost:3000/ticker/RUNE" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> THORChain</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">41</div></span><span style="color: rgb(241, 241, 241);">RUNE</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$19.97</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.33%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+8.1%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="green-crypto-graph" src="./App Title_files/4157(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/5805.png"></span><span><a href="http://localhost:3000/ticker/AVAX" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Avalanche</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">42</div></span><span style="color: rgb(241, 241, 241);">AVAX</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$36.8</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-1.76%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+6.01%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="green-crypto-graph" src="./App Title_files/5805(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/7186.png"></span><span><a href="http://localhost:3000/ticker/CAKE" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> PancakeSwap</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">43</div></span><span style="color: rgb(241, 241, 241);">CAKE</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$28.7</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.28%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+5.57%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/7186(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/4030.png"></span><span><a href="http://localhost:3000/ticker/ALGO" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Algorand</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">44</div></span><span style="color: rgb(241, 241, 241);">ALGO</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$1.35</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.17%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.81%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/4030(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/3635.png"></span><span><a href="http://localhost:3000/ticker/CRO" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Crypto.com Coin</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">45</div></span><span style="color: rgb(241, 241, 241);">CRO</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$0.1491</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.76%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+0.38%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/3635(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/3718.png"></span><span><a href="http://localhost:3000/ticker/BTT" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> BitTorrent</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">46</div></span><span style="color: rgb(241, 241, 241);">BTT</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$0.0056</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.55%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+1.43%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/3718(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/5692.png"></span><span><a href="http://localhost:3000/ticker/COMP" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Compound</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">47</div></span><span style="color: rgb(241, 241, 241);">COMP</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$711.47</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.76%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+7.03%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/5692(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/131.png"></span><span><a href="http://localhost:3000/ticker/DASH" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Dash</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">48</div></span><span style="color: rgb(241, 241, 241);">DASH</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$311.33</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.93%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-2.61%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/131(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/3957.png"></span><span><a href="http://localhost:3000/ticker/LEO" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> UNUS SED LEO</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">49</div></span><span style="color: rgb(241, 241, 241);">LEO</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$3.2</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.31%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-16.45%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/3957(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr><tr class="MuiTableRow-root"><th class="MuiTableCell-root MuiTableCell-body" role="cell" scope="row"><span><img alt="img" class="crypto-icon" src="./App Title_files/1274.png"></span><span><a href="http://localhost:3000/ticker/WAVES" class="table-atag"><ul style="margin: 0px; list-style-type: none;"><li><h4> Waves</h4></li><li><span><div style="padding: 3px; display: inline; background-color: rgb(153, 153, 153); border-radius: 4px; margin-right: 5px;">50</div></span><span style="color: rgb(241, 241, 241);">WAVES</span></li></ul></a></span></th><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>$28.65</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="red">-0.37%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4 id="green">+0.71%</h4></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><img alt="img" class="crypto-graph" id="red-crypto-graph" src="./App Title_files/1274(1).png"></td><td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"><h4>10</h4></td></tr></tbody></table></div></div></div><div>footer</div></div>
+  <script src="./App Title_files/bundle.js"></script><script src="./App Title_files/vendors_main.chunk.js"></script><script src="./App Title_files/main.chunk.js"></script>
+
+</body></html>

@@ -1,0 +1,24 @@
+.top-nav {
+  width: 90vw;
+  background-color: RGB(34, 34, 34);
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.top-nav h3 {
+  margin: 20px;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: RGB(241, 241, 241);
+}
+
+.about-div h4 {
+  margin: 0;
+}
+
+.about-div h6 {
+  margin: 0;
+  margin-bottom: 20px;
+}

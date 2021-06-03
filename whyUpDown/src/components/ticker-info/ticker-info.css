@@ -1,0 +1,27 @@
+.mobile-drawer-x {
+  float: right;
+}
+
+.ticker-info-div {
+  width: 24vw;
+  float: right;
+  max-height: 190vh;
+  overflow-y: scroll;
+  background-color: RGB(39, 41, 59);
+}
+
+.mobile-drawer-toggle-div {
+  height: 3vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  border-top: 2px solid RGB(240, 240, 240);
+  background-color: RGB(39, 41, 59);
+  color: white;
+  border-radius: 5px 5px 0 0;
+}

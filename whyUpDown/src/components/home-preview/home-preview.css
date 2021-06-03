@@ -1,0 +1,18 @@
+.home-preview {
+  background-color: RGB(70, 69, 69);
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
+}
+
+.home-preview h3 {
+  margin: 0;
+  color: RGB(241, 241, 241);
+}
+
+.home-preview h4 {
+  margin: 0;
+  color: RGB(241, 241, 241);
+}

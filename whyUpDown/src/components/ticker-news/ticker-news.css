@@ -1,0 +1,26 @@
+.news-parent-div h3 {
+  margin: 0;
+}
+
+.news-div-block {
+  background-color: RGBA(0, 0, 0, 0);
+  width: 90%;
+  margin: 4.5%;
+  border: 1px solid RGB(153, 153, 153);
+  border-radius: 0 15px 0 0;
+  min-height: 200px;
+}
+
+.news-div-top {
+  display: block;
+  width: 90%;
+  height: 25px;
+  background-color: RGB(39, 41, 59);
+  padding-left: 8px;
+  color: white;
+}
+
+.news-div-content {
+  max-height: 80vh;
+  overflow-y: scroll;
+}

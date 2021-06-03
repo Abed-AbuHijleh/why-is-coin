@@ -1,0 +1,98 @@
+.outer-div {
+    display: block;
+    width: 100vw;
+}
+
+.parent-div {
+    display: block;
+    margin-left:5vw;
+}
+
+.crypto-icon-page {
+    width:4vw;
+}
+
+.news-div {
+    display: inline-block;
+}
+
+
+
+.news-outer-div {
+    min-width: 500px;
+    width: 40vw;
+    outline: 2px solid black;
+    margin-bottom: 50px;
+}
+
+.article {
+    outline: 1px solid gray;
+}
+
+.article-a {
+    text-decoration: none;
+    color:black;
+}
+
+.landscape-data {
+    float:right;
+    min-width: 300px;
+    width: 25vw;
+    background-color: #eee;
+    margin-right:5vw;
+    height:80vh;
+}
+
+.portrait-data {
+    display:none;
+}
+
+.portrait-data table {
+    display: none;
+}
+
+.leftside-div {
+    display: inline-block;
+    width: 35%;
+    height: 25vh;
+    margin-top: 5vh;
+  }
+
+  .article-title {
+      color: black;
+  }
+
+  .news-header {
+      width:100%
+  }
+  
+  .rightside-div {
+    display: inline-block; 
+    width: 65%;
+    height: 25vh;
+  }
+  
+  .rightside-list {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .rightside-list li {
+      margin-top: 10px;
+  }
+  
+  .author {
+    text-decoration: none;
+    display: inline;
+    color:black;
+  }
+  
+  .source {
+    text-decoration: none;
+    display:inline;
+    color: gray;
+  }
+
+  .article-desc {
+      color: rgb(65, 65, 65);
+  }

@@ -1,0 +1,37 @@
+.top-search {
+  background-image: linear-gradient(RGB(34, 34, 34), RGB(70, 69, 69));
+  color: RGB(241, 241, 241);
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.top-search h4 {
+  margin: 0;
+  font-size: min(max(16px, 4vw), 28px);
+}
+.top-search-name {
+  color: RGB(78, 134, 169);
+}
+
+.top-search-up {
+  color: RGB(83, 184, 143);
+}
+
+.top-search-down {
+  color: RGB(215, 86, 69);
+}
+
+#standard-basic {
+  color: RGB(241, 241, 241);
+}
+
+#combo-box-demo {
+  color: white;
+}
+
+.MuiSvgIcon-root {
+  color: white;
+}

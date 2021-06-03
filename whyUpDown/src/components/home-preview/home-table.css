@@ -1,0 +1,51 @@
+.crypto-icon {
+  width: 40px;
+  float: left;
+  padding-right: 0.5vw;
+  margin-right: 5px;
+}
+
+.table-atag {
+  text-decoration: none;
+  color: black;
+}
+
+.table-atag h4:hover {
+  color: RGB(153, 153, 153);
+}
+
+#red {
+  color: RGB(215, 86, 69);
+}
+
+#green {
+  color: RGB(83, 184, 143);
+}
+
+.crypto-graph {
+  min-width: 170px;
+}
+
+#red-crypto-graph {
+  filter: invert(53%) sepia(54%) saturate(6847%) hue-rotate(345deg)
+    brightness(99%) contrast(98%);
+}
+
+#green-crypto-graph {
+  filter: invert(77%) sepia(78%) saturate(1584%) hue-rotate(59deg)
+    brightness(97%) contrast(101%);
+}
+
+.home-preview thead th:first-child {
+  position: sticky;
+  left: 0;
+  background-color: RGB(39, 41, 59);
+  z-index: 1;
+}
+
+.home-preview tbody th {
+  position: sticky;
+  left: 0;
+  background-color: RGB(39, 41, 59);
+  z-index: 1;
+}

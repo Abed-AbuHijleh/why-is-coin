@@ -1,0 +1,11 @@
+.file-not-found-div {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-not-found-img {
+    width: 80vw;
+    max-width: 900px;
+}
