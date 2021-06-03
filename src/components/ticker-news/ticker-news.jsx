@@ -15,7 +15,7 @@ const Component = (info) => {
     res.onerror = console.log()
     res.open(
       'GET',
-      'http://192.168.68.56:8000/rtdata/news?keyword=' +
+      'https://why-is-coin-api.herokuapp.com/rtdata/news?keyword=' +
         info.data[1] +
         '&delta=' +
         info.data[0] / 100,

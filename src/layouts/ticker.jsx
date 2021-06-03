@@ -18,7 +18,7 @@ const Ticker = () => {
     let res = await new XMLHttpRequest()
     res.onload = apiSucc
     res.onerror = console.log()
-    res.open('GET', 'http://192.168.68.56:8000/data/ticker?ticker=' + symbol)
+    res.open('GET', 'https://why-is-coin-api.herokuapp.com/data/ticker?ticker=' + symbol)
     res.send()
   }
 

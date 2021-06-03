@@ -19,7 +19,7 @@ const Home = () => {
     res.onerror = console.log()
     res.open(
       'GET',
-      'http://192.168.68.56:8000/data/latest?start=' + start + '&end=' + end,
+      'https://why-is-coin-api.herokuapp.com/data/latest?start=' + start + '&end=' + end,
     )
     res.send()
   }
