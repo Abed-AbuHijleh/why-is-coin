@@ -1,23 +1,23 @@
-import React, { useState } from 'react'
-import './ticker-info.css'
+import React, { useState } from "react";
+import "./ticker-info.css";
 
-import InfoTable from './info-table.jsx'
+import InfoTable from "./info-table.jsx";
 
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
+import Drawer from "@material-ui/core/Drawer";
 
-import { BsX } from 'react-icons/bs'
+import { BsX } from "react-icons/bs";
 
-const Component = (info) => {
-  const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent)
-  const [DrawerToggled, ToggleDrawer] = useState(false)
+const Component = info => {
+  const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
+  const [DrawerToggled, ToggleDrawer] = useState(false);
   function MenuClicked() {
-    ToggleDrawer(!DrawerToggled)
+    ToggleDrawer(!DrawerToggled);
   }
   return (
     <React.Fragment>
       {window.innerWidth < 960 ? (
         <React.Fragment>
-          <SwipeableDrawer
+          <Drawer
             disableBackdropTransition={!iOS}
             disableDiscovery={iOS}
             anchor="bottom"
@@ -29,19 +29,19 @@ const Component = (info) => {
             <span
               onClick={MenuClicked}
               style={{
-                backgroundColor: 'RGB(39,41,59)',
-                color: 'white',
-                borderBottom: 'solid 1px RGB(241,241,241)',
+                backgroundColor: "RGB(39,41,59)",
+                color: "white",
+                borderBottom: "solid 1px RGB(241,241,241)"
               }}
             >
               <BsX size="2em" className="mobile-drawer-x" />
             </span>
             <div
-              style={{ overflowY: 'scroll', backgroundColor: 'RGB(39,41,59)' }}
+              style={{ overflowY: "scroll", backgroundColor: "RGB(39,41,59)" }}
             >
               <InfoTable data={info.data} />
             </div>
-          </SwipeableDrawer>
+          </Drawer>
           <div className="mobile-drawer-toggle-div" onClick={MenuClicked}>
             Click to Show More Stats
           </div>
@@ -52,7 +52,7 @@ const Component = (info) => {
         </div>
       )}
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default Component
+export default Component;
