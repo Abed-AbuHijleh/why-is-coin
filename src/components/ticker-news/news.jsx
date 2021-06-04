@@ -33,6 +33,7 @@ const Component = info => {
                           height: "190px",
                           marginBottom: "10px",
                           borderRadius: "10px",
+                          border: "2px solid " + info.colors[3],
                           backgroundColor: "black"
                         }
                       : {
@@ -40,6 +41,7 @@ const Component = info => {
                           height: "190px",
                           marginBottom: "10px",
                           borderRadius: "10px",
+                          border: "1px solid gray",
                           backgroundColor: info.colors[3]
                         }
                   }
