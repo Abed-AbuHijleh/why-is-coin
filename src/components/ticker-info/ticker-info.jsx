@@ -29,26 +29,34 @@ const Component = info => {
             <span
               onClick={MenuClicked}
               style={{
-                backgroundColor: "RGB(39,41,59)",
-                color: "white",
-                borderBottom: "solid 1px RGB(241,241,241)"
+                backgroundColor: info.colors[3],
+                color: info.colors[2],
+                borderBottom: "solid 1px " + info.colors[3]
               }}
             >
               <BsX size="2em" className="mobile-drawer-x" />
             </span>
             <div
-              style={{ overflowY: "scroll", backgroundColor: "RGB(39,41,59)" }}
+              style={{ overflowY: "scroll", backgroundColor: info.colors[3] }}
             >
-              <InfoTable data={info.data} />
+              <InfoTable data={info.data} colors={info.colors} />
             </div>
           </Drawer>
-          <div className="mobile-drawer-toggle-div" onClick={MenuClicked}>
+          <div
+            className="mobile-drawer-toggle-div"
+            style={{
+              backgroundColor: info.colors[3],
+              color: info.colors[2],
+              borderTop: "1px solid " + info.colors[1]
+            }}
+            onClick={MenuClicked}
+          >
             Click to Show More Stats
           </div>
         </React.Fragment>
       ) : (
         <div className="ticker-info-div">
-          <InfoTable data={info.data} />
+          <InfoTable data={info.data} colors={info.colors} />
         </div>
       )}
     </React.Fragment>

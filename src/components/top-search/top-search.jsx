@@ -1,78 +1,72 @@
-import React, { useState, useEffect } from 'react'
-import './top-search.css'
+import React, { useState, useEffect } from "react";
+import "./top-search.css";
 
-import TextTransition, { presets } from 'react-text-transition'
+import TextTransition, { presets } from "react-text-transition";
 
-import { makeStyles } from '@material-ui/core/styles'
-import TextField from '@material-ui/core/TextField'
-import Autocomplete from '@material-ui/lab/Autocomplete'
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 
-import Coins from './coins.json'
+import Coins from "./coins.json";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(3),
-    },
-    multilineColor: {
-      color: 'red',
-    },
-    '& .MuiTextField-root': {
-      color: 'white',
-    },
-    // Labels
-    '& label': {
-      color: 'RGB(241, 241, 241)',
-    },
-    '& label.Mui-focused': {
-      color: 'RGB(241, 241, 241)',
-    },
-    // Outline
-    '& .MuiInput-underline:after': {
-      borderBottomColor: 'RGB(78, 134, 169)',
-    },
-    // Label Focused
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: 'RGB(241, 241, 241)',
+const Component = info => {
+  const useStyles = makeStyles(theme => ({
+    root: {
+      "& > *": {
+        margin: theme.spacing(3)
       },
-      // Hover Outline
-      '&:hover fieldset': {
-        borderColor: 'RGB(153, 153, 153)',
+      // Labels
+      "& label": {
+        color: info.colors[5]
       },
-      // Focused Label
-      '&.Mui-focused fieldset': {
-        borderColor: 'RGB(78, 134, 169)',
+      "& label.Mui-focused": {
+        color: info.colors[2]
       },
-      // Responsive Width
-      width: 'min(max(200px, 80vw), 600px)',
-    },
-  },
-}))
+      // Outline
+      "& .MuiInput-underline:after": {
+        borderBottomColor: info.colors[2]
+      },
+      // Label Focused
+      "& .MuiOutlinedInput-root": {
+        "& fieldset": {
+          borderColor: info.colors[2]
+        },
+        // Hover Outline
+        "&:hover fieldset": {
+          borderColor: "RGB(153, 153, 153)"
+        },
+        // Focused Label
+        "&.Mui-focused fieldset": {
+          borderColor: info.colors[5]
+        },
+        // Responsive Width
+        width: "min(max(200px, 80vw), 600px)",
+        color: info.colors[2]
+      }
+    }
+  }));
+  const classes = useStyles();
 
-const Component = (info) => {
-  const classes = useStyles()
-  const [index, setIndex] = useState(0)
-
+  const [index, setIndex] = useState(0);
   useEffect(() => {
     if (info.home) {
       const intervalId = setInterval(
-        () => setIndex((index) => index + 1),
-        3000, // every 3 seconds
-      )
-      return () => clearTimeout(intervalId)
+        () => setIndex(index => index + 1),
+        3000 // every 3 seconds
+      );
+      return () => clearTimeout(intervalId);
     }
     // eslint-disable-next-line
-  }, [])
+  }, []);
 
   return (
     <div
       className="top-search"
-      style={
-        window.innerWidth < 960
-          ? { borderBottom: 'none' }
-          : { borderBottom: '2px solid white' }
-      }
+      style={{
+        backgroundColor: info.colors[0],
+        color: info.colors[2],
+        borderBottom: "2px solid " + info.colors[1]
+      }}
     >
       {info.loading ? (
         <h4>Why is Crypto Changing?</h4>
@@ -80,8 +74,8 @@ const Component = (info) => {
         <React.Fragment>
           {info.home ? (
             <h4>
-              Why is{' '}
-              <span className="top-search-name">
+              Why is{" "}
+              <span style={{ color: info.colors[5] }}>
                 <TextTransition
                   text={
                     info.data[1].data[index % info.data[1].data.length].name +
@@ -90,21 +84,21 @@ const Component = (info) => {
                   springConfig={presets.stiff}
                   inline={true}
                 />
-              </span>{' '}
-              price going{' '}
+              </span>{" "}
+              price going{" "}
               <span
-                className={
+                id={
                   info.data[1].data[index % info.data[1].data.length].pc_day < 0
-                    ? 'top-search-down'
-                    : 'top-search-up'
+                    ? "red"
+                    : "green"
                 }
               >
                 <TextTransition
                   text={
                     info.data[1].data[index % info.data[1].data.length].pc_day <
                     0
-                      ? 'down'
-                      : 'up'
+                      ? "down"
+                      : "up"
                   }
                   springConfig={presets.stiff}
                   inline={true}
@@ -114,14 +108,11 @@ const Component = (info) => {
             </h4>
           ) : (
             <h4>
-              Why is <span className="top-search-name">{info.data.name}'s</span>{' '}
-              price going{' '}
-              <span
-                className={
-                  info.data.pc_day < 0 ? 'top-search-down' : 'top-search-up'
-                }
-              >
-                {info.data.pc_day < 0 ? 'down' : 'up'}
+              Why is{" "}
+              <span style={{ color: info.colors[5] }}>{info.data.name}'s</span>{" "}
+              price going{" "}
+              <span id={info.data.pc_day < 0 ? "red" : "green"}>
+                {info.data.pc_day < 0 ? "down" : "up"}
               </span>
               ?
             </h4>
@@ -131,15 +122,14 @@ const Component = (info) => {
       <Autocomplete
         id="combo-box-demo"
         options={Coins}
-        Autocomplete
         onChange={(event, value) => {
-          console.log(value)
-          window.location.href = '/ticker/' + value.symbol
+          console.log(value);
+          window.location.href = "/ticker/" + value.symbol;
         }}
-        getOptionLabel={(option) => {
-          return option.symbol + ' ' + option.name
+        getOptionLabel={option => {
+          return option.symbol + " " + option.name;
         }}
-        renderInput={(params) => (
+        renderInput={params => (
           <TextField
             {...params}
             className={classes.root}
@@ -148,11 +138,12 @@ const Component = (info) => {
             id="standard-basic"
             label="Search Ticker"
             size="small"
-            onKeyPress={(event) => {
-              if (event.key === 'Enter') {
-                if (document.querySelector('#combo-box-demo').value !== '') {
+            onKeyPress={event => {
+              if (event.key === "Enter") {
+                if (document.querySelector("#combo-box-demo").value !== "") {
                   window.location.href =
-                    '/ticker/' + document.querySelector('#combo-box-demo').value
+                    "/ticker/" +
+                    document.querySelector("#combo-box-demo").value;
                 } else {
                 }
               }
@@ -161,7 +152,7 @@ const Component = (info) => {
         )}
       />
     </div>
-  )
-}
+  );
+};
 
-export default Component
+export default Component;

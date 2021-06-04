@@ -1,26 +1,26 @@
-import React from 'react'
-import { Tweet } from 'react-twitter-widgets'
+import React from "react";
+import { Tweet } from "react-twitter-widgets";
 
-const Component = (tweets) => {
+const Component = info => {
   try {
     return (
       <React.Fragment>
-        {tweets.tweets.tweets.map((tweet) => {
+        {info.tweets.tweets.map(tweet => {
           return (
             <Tweet
               key={tweet.id}
               options={{
-                theme: 'dark',
+                theme: info.colors[0] === "#f3f3f3" ? "light" : "dark"
               }}
               tweetId={tweet.id}
             />
-          )
+          );
         })}
       </React.Fragment>
-    )
+    );
   } catch (e) {
-    return <h3>API Error</h3>
+    return <h3>API Error</h3>;
   }
-}
+};
 
-export default Component
+export default Component;

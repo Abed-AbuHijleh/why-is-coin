@@ -5,21 +5,16 @@
   margin-right: 5px;
 }
 
-.table-atag {
-  text-decoration: none;
-  color: black;
-}
-
 .table-atag h4:hover {
   color: RGB(153, 153, 153);
 }
 
 #red {
-  color: RGB(215, 86, 69);
+  color: RGB(251, 71, 43);
 }
 
 #green {
-  color: RGB(83, 184, 143);
+  color: RGB(61, 132, 1);
 }
 
 .crypto-graph {
@@ -27,8 +22,8 @@
 }
 
 #red-crypto-graph {
-  filter: invert(53%) sepia(54%) saturate(6847%) hue-rotate(345deg)
-    brightness(99%) contrast(98%);
+  filter: invert(53%) sepia(54%) saturate(1847%) hue-rotate(345deg)
+    brightness(99%) contrast(78%);
 }
 
 #green-crypto-graph {
@@ -39,13 +34,11 @@
 .home-preview thead th:first-child {
   position: sticky;
   left: 0;
-  background-color: RGB(39, 41, 59);
   z-index: 1;
 }
 
 .home-preview tbody th {
   position: sticky;
   left: 0;
-  background-color: RGB(39, 41, 59);
   z-index: 1;
 }

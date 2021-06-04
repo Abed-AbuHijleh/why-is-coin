@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import TopSearch from "../components/top-search/top-search.jsx";
 import HomePreview from "../components/home-preview/home-preview.jsx";
 
-const Home = () => {
+const Home = info => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [total, setTotal] = useState(0);
@@ -44,7 +44,12 @@ const Home = () => {
 
   return (
     <React.Fragment>
-      <TopSearch data={data} loading={loading} home={true} />
+      <TopSearch
+        data={data}
+        loading={loading}
+        home={true}
+        colors={info.colors}
+      />
       <HomePreview
         data={data}
         loading={loading}
@@ -52,6 +57,7 @@ const Home = () => {
         rowsPerPage={rowsPerPage}
         page={page}
         fetchHomeData={fetchHomeData}
+        colors={info.colors}
       />
     </React.Fragment>
   );

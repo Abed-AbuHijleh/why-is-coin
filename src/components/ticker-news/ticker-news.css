@@ -3,7 +3,6 @@
 }
 
 .news-div-block {
-  background-color: RGBA(0, 0, 0, 0);
   width: 90%;
   margin: 4.5%;
   border: 1px solid RGB(153, 153, 153);
@@ -11,13 +10,11 @@
   min-height: 200px;
 }
 
-.news-div-top {
+#news-div-top {
   display: block;
   width: 90%;
   height: 25px;
-  background-color: RGB(39, 41, 59);
   padding-left: 8px;
-  color: white;
 }
 
 .news-div-content {

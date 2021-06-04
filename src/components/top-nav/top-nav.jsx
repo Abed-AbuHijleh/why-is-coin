@@ -16,7 +16,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const Component = mobileOpen => {
+const Component = info => {
   const [DrawerToggled, ToggleDrawer] = useState(false);
 
   const classes = useStyles();
@@ -29,18 +29,19 @@ const Component = mobileOpen => {
     <React.Fragment>
       <div
         style={
-          mobileOpen.mobileOpen
+          info.mobileOpen
             ? {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
                 flexDirection: "row",
-                borderBottom: "2px solid RGB(153, 153, 153)"
+                backgroundColor: info.colors[0]
               }
             : {
                 display: "flex",
                 justifyContent: "flex-end",
-                alignItems: "center"
+                alignItems: "center",
+                backgroundColor: info.colors[0]
               }
         }
         className="top-nav"
@@ -58,7 +59,7 @@ const Component = mobileOpen => {
           />
         </a>
         <span onClick={MenuClicked} style={{ color: "white" }}>
-          <h3 style={{ color: "RGB(90, 134, 166)" }}>About</h3>
+          <h3 style={{ color: info.colors[5] }}>About</h3>
         </span>
       </div>
       <Drawer anchor="right" open={DrawerToggled}>
@@ -66,7 +67,7 @@ const Component = mobileOpen => {
           style={{
             width: "Min(400px,80vw)",
             height: "100%",
-            backgroundColor: "RGB(24, 24, 34)",
+            backgroundColor: info.colors[3],
             overflow: "hidden",
             paddingTop: "5px"
           }}
@@ -75,7 +76,7 @@ const Component = mobileOpen => {
             <BsArrowBarRight
               size="3em"
               className="header-mobile-menu-exit"
-              color="white"
+              color={info.colors[2]}
             />
           </span>
           <div
@@ -84,7 +85,7 @@ const Component = mobileOpen => {
               justifyContent: "center",
               alignItems: "center",
               flexDirection: "column",
-              color: "white",
+              color: info.colors[2],
               margin: "25px",
               marginTop: "-60px"
             }}
@@ -93,7 +94,7 @@ const Component = mobileOpen => {
             <h2
               style={{
                 textDecoration: "underline",
-                textDecorationColor: "blue"
+                textDecorationColor: info.colors[5]
               }}
             >
               About The Site
@@ -116,7 +117,7 @@ const Component = mobileOpen => {
             <h2
               style={{
                 textDecoration: "underline",
-                textDecorationColor: "blue"
+                textDecorationColor: info.colors[5]
               }}
             >
               Support The Site
