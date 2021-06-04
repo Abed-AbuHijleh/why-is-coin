@@ -52,7 +52,8 @@ const Component = info => {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "space-between",
-                      margin: "5%"
+                      margin: "5%",
+                      marginBottom: "-15px"
                     }}
                   >
                     <h3
