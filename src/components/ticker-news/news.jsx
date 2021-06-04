@@ -19,7 +19,9 @@ const Component = info => {
               href={article.url}
               target="_blank"
               rel="noreferrer"
-              style={{ textDecoration: "none" }}
+              style={{
+                textDecoration: "none"
+              }}
             >
               {window.innerWidth < 960 ? (
                 <div
@@ -113,6 +115,8 @@ const Component = info => {
                           marginLeft: "5px",
                           marginBottom: "10px",
                           overflow: "hidden",
+                          borderRadius: "15px",
+                          border: "2px solid " + info.colors[3],
                           backgroundColor: "black"
                         }
                       : {
@@ -122,6 +126,8 @@ const Component = info => {
                           marginLeft: "5px",
                           marginBottom: "10px",
                           overflow: "hidden",
+                          borderRadius: "15px",
+                          border: "1px solid gray",
                           backgroundColor: info.colors[3]
                         }
                   }

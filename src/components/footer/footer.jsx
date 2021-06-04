@@ -79,31 +79,63 @@ const Component = info => {
             </a>
           </li>
         </ul>
-        <ul>
-          <li>
-            <h2>Contact</h2>
-          </li>
-          <li>
-            <a id="copy" href="mailto:whyiscoin@gmail.com">
-              <h4>whyiscoin@gmail.com</h4>
-            </a>
-          </li>
-          <li>
-            <h2>Theme</h2>{" "}
-            <FormControlLabel
-              control={
-                <Switch
-                  className={classes.root}
-                  color="default"
-                  checked={info.darkmode}
-                  onChange={handleChange}
-                  name="darkmode"
+        {window.innerWidth < 1450 ? (
+          <ul>
+            <li>
+              <h2>Contact</h2>
+            </li>
+            <li>
+              <a id="copy" href="mailto:whyiscoin@gmail.com">
+                <h4>whyiscoin@gmail.com</h4>
+              </a>
+            </li>
+            <li>
+              <h2>Theme</h2>
+              <FormControlLabel
+                control={
+                  <Switch
+                    className={classes.root}
+                    color="default"
+                    checked={info.darkmode}
+                    onChange={handleChange}
+                    name="darkmode"
+                  />
+                }
+                label={info.darkmode ? "Darkmode" : "Lightmode"}
+              />
+            </li>
+          </ul>
+        ) : (
+          <React.Fragment>
+            <ul>
+              <li>
+                <h2>Contact</h2>
+              </li>
+              <li>
+                <a id="copy" href="mailto:whyiscoin@gmail.com">
+                  <h4>whyiscoin@gmail.com</h4>
+                </a>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <h2>Theme</h2>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      className={classes.root}
+                      color="default"
+                      checked={info.darkmode}
+                      onChange={handleChange}
+                      name="darkmode"
+                    />
+                  }
+                  label={info.darkmode ? "Darkmode" : "Lightmode"}
                 />
-              }
-              label={info.darkmode ? "Darkmode" : "Lightmode"}
-            />
-          </li>
-        </ul>
+              </li>
+            </ul>
+          </React.Fragment>
+        )}
         <h2 style={{ maxWidth: "70vw", textAlign: "center" }}>
           Reimagine the future of researching investments.
         </h2>

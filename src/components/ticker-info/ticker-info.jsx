@@ -55,7 +55,13 @@ const Component = info => {
           </div>
         </React.Fragment>
       ) : (
-        <div className="ticker-info-div">
+        <div
+          className="ticker-info-div"
+          style={{
+            boxShadow: "5px 5px 15px 5px rgba(0,0,0,0.35)",
+            backgroundColor: info.colors[3]
+          }}
+        >
           <InfoTable data={info.data} colors={info.colors} />
         </div>
       )}

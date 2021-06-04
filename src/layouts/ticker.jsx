@@ -73,7 +73,7 @@ const Ticker = info => {
             <div
               style={{
                 overflow: "hidden",
-                backgroundColor: info.colors[3]
+                backgroundColor: info.colors[0]
               }}
             >
               <TickerNews
