@@ -22,8 +22,8 @@
 }
 
 #red-crypto-graph {
-  filter: invert(53%) sepia(54%) saturate(1847%) hue-rotate(345deg)
-    brightness(99%) contrast(78%);
+  filter: invert(36%) sepia(99%) saturate(7458%) hue-rotate(354deg)
+    brightness(85%) contrast(102%);
 }
 
 #green-crypto-graph {
