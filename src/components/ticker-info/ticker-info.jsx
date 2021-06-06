@@ -47,11 +47,12 @@ const Component = info => {
             style={{
               backgroundColor: info.colors[3],
               color: info.colors[2],
-              borderTop: "1px solid " + info.colors[1]
+              borderTop: "1px solid " + info.colors[1],
+              height: "30px"
             }}
             onClick={MenuClicked}
           >
-            Click to Show More Stats
+            <h4>Click to Show More Stats</h4>
           </div>
         </React.Fragment>
       ) : (

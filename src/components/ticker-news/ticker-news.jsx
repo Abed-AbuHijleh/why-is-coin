@@ -71,7 +71,7 @@ const Component = info => {
               }}
             >
               {" "}
-              Sentiment:{" "}
+              Total Sentiment:{" "}
               {data.news !== undefined
                 ? data.news.sentiment === 0
                   ? "Neutral"
@@ -128,7 +128,7 @@ const Component = info => {
                 }}
               >
                 {" "}
-                Sentiment:{" "}
+                Total Sentiment:{" "}
                 {data.twitter !== undefined
                   ? data.twitter.sentiment === 0
                     ? "Neutral"

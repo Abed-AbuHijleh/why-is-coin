@@ -16,9 +16,6 @@ const useStyles = makeStyles({
 
 const Component = info => {
   const classes = useStyles();
-  const handleChange = () => {
-    info.setTheme(!info.darkmode);
-  };
   return (
     <div className="footer-outer-div">
       <div
@@ -97,7 +94,7 @@ const Component = info => {
                     className={classes.root}
                     color="default"
                     checked={info.darkmode}
-                    onChange={handleChange}
+                    onChange={info.changeTheme}
                     name="darkmode"
                   />
                 }
@@ -126,7 +123,7 @@ const Component = info => {
                       className={classes.root}
                       color="default"
                       checked={info.darkmode}
-                      onChange={handleChange}
+                      onChange={info.changeTheme}
                       name="darkmode"
                     />
                   }
@@ -140,7 +137,28 @@ const Component = info => {
           Reimagine the future of researching investments.
         </h2>
       </div>
-      <h4>© 2021 by Why is Coin?.</h4>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          marginRight: "10vw"
+        }}
+      >
+        <h4>© 2021 by Why is Coin?.</h4>
+        <h4>
+          <a
+            style={{
+              color: "RGB(220,220,255)",
+              textDecoration: "underline",
+              textDecorationColor: "RGB(147, 0, 255)"
+            }}
+            href="/privacy-policy"
+          >
+            Privacy Policy
+          </a>
+        </h4>
+      </div>
     </div>
   );
 };

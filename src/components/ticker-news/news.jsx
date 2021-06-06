@@ -7,7 +7,8 @@ const Component = info => {
       <div
         style={{
           margin: 0,
-          padding: 0
+          padding: 0,
+          overflowX: "hidden"
         }}
       >
         {info.articles.articles.map(article => {
@@ -29,7 +30,7 @@ const Component = info => {
                   style={
                     info.colors[0] === "RGB(34, 34, 34)"
                       ? {
-                          width: "100%",
+                          width: "min(99%, 600px)",
                           height: "190px",
                           marginBottom: "10px",
                           borderRadius: "10px",
@@ -37,7 +38,7 @@ const Component = info => {
                           backgroundColor: "black"
                         }
                       : {
-                          width: "100%",
+                          width: "min(99%, 600px)",
                           height: "190px",
                           marginBottom: "10px",
                           borderRadius: "10px",
@@ -113,8 +114,8 @@ const Component = info => {
                     info.colors[0] === "RGB(34, 34, 34)"
                       ? {
                           display: "inline-block",
-                          width: "49%",
-                          height: "400px",
+                          width: "min(49%, 550px)",
+                          height: "420px",
                           marginLeft: "5px",
                           marginBottom: "10px",
                           overflow: "hidden",
@@ -124,8 +125,8 @@ const Component = info => {
                         }
                       : {
                           display: "inline-block",
-                          width: "49%",
-                          height: "400px",
+                          width: "min(49%, 550px)",
+                          height: "420px",
                           marginLeft: "5px",
                           marginBottom: "10px",
                           overflow: "hidden",

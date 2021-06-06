@@ -1,11 +1,11 @@
 .footer-outer-div {
   color: white;
-  background: rgb(2, 0, 36);
-  background: rgb(147, 0, 255);
+  background: RGB(2, 0, 36);
+  background: RGB(147, 0, 255);
   background: linear-gradient(
     90deg,
-    rgba(147, 0, 255, 1) 0%,
-    rgba(0, 144, 255, 1) 100%
+    RGBA(147, 0, 255, 1) 0%,
+    RGBA(0, 144, 255, 1) 100%
   );
   padding-top: -5vw;
   padding-bottom: 30px;
