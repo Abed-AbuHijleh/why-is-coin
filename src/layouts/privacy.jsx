@@ -173,7 +173,7 @@ const Component = info => {
           and to improve and analyze Our Service. The technologies We use may
           include:
         </p>
-        <ul>
+        <ul style={{ maxWidth: "80vw" }}>
           <li>
             <strong>Cookies or Browser Cookies.</strong> A cookie is a small
             file placed on Your Device. You can instruct Your browser to refuse
