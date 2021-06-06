@@ -7,6 +7,8 @@ import N from "../../resources/emojis/neutral.png";
 import PP from "../../resources/emojis/partial-positive.png";
 import VP from "../../resources/emojis/very-positive.png";
 
+const polarThreshhold = 40;
+
 const Component = info => {
   try {
     return (
@@ -37,7 +39,7 @@ const Component = info => {
                     info.colors[0] === "RGB(34, 34, 34)"
                       ? {
                           width: "min(99%, 600px)",
-                          height: "190px",
+                          minHeight: "190px",
                           marginBottom: "10px",
                           borderRadius: "10px",
                           border: "2px solid " + info.colors[3],
@@ -45,7 +47,7 @@ const Component = info => {
                         }
                       : {
                           width: "min(99%, 600px)",
-                          height: "190px",
+                          minHeight: "190px",
                           marginBottom: "10px",
                           borderRadius: "10px",
                           border: "1px solid gray",
@@ -113,15 +115,15 @@ const Component = info => {
                           }
                           src={
                             // Positive
-                            article.sentiment > 0.05
+                            article.sentiment > 5
                               ? // Very Positive
-                                article.sentiment > 0.3
+                                article.sentiment > polarThreshhold
                                 ? VP
                                 : PP
                               : // Negative
-                              article.sentiment < 0.05
+                              article.sentiment < -5
                               ? // Very negative
-                                article.sentiment < 0.3
+                                article.sentiment < polarThreshhold * -1
                                 ? VN
                                 : PN
                               : // Neutral
@@ -141,7 +143,7 @@ const Component = info => {
                     info.colors[0] === "RGB(34, 34, 34)"
                       ? {
                           display: "inline-block",
-                          width: "min(49%, 550px)",
+                          width: "min(47%, 550px)",
                           height: "420px",
                           marginLeft: "5px",
                           marginBottom: "10px",
@@ -227,15 +229,15 @@ const Component = info => {
                       }
                       src={
                         // Positive
-                        article.sentiment > 0.05
+                        article.sentiment > 5
                           ? // Very Positive
-                            article.sentiment > 0.3
+                            article.sentiment > polarThreshhold
                             ? VP
                             : PP
                           : // Negative
-                          article.sentiment < 0.05
+                          article.sentiment < -5
                           ? // Very negative
-                            article.sentiment < 0.3
+                            article.sentiment < polarThreshhold * -1
                             ? VN
                             : PN
                           : // Neutral

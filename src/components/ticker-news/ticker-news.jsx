@@ -11,6 +11,8 @@ import N from "../../resources/emojis/neutral.png";
 import PP from "../../resources/emojis/partial-positive.png";
 import VP from "../../resources/emojis/very-positive.png";
 
+const polarThreshhold = 40;
+
 const Component = info => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -89,15 +91,15 @@ const Component = info => {
                 src={
                   data.news !== undefined
                     ? // Positive
-                      data.news.sentiment > 0.05
+                      data.news.sentiment > 5
                       ? // Very Positive
-                        data.news.sentiment > 0.3
+                        data.news.sentiment > polarThreshhold
                         ? VP
                         : PP
                       : // Negative
-                      data.news.sentiment < 0.05
+                      data.news.sentiment < -5
                       ? // Very negative
-                        data.news.sentiment < 0.3
+                        data.news.sentiment < polarThreshhold * -1
                         ? VN
                         : PN
                       : // Neutral
@@ -170,15 +172,15 @@ const Component = info => {
                   src={
                     data.twitter !== undefined
                       ? // Positive
-                        data.twitter.sentiment > 0.05
+                        data.twitter.sentiment > 5
                         ? // Very Positive
-                          data.twitter.sentiment > 0.3
+                          data.twitter.sentiment > polarThreshhold
                           ? VP
                           : PP
                         : // Negative
-                        data.twitter.sentiment < 0.05
+                        data.twitter.sentiment < -5
                         ? // Very negative
-                          data.twitter.sentiment < 0.3
+                          data.twitter.sentiment < polarThreshhold * -1
                           ? VN
                           : PN
                         : // Neutral
