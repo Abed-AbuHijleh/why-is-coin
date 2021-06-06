@@ -101,8 +101,8 @@ const Component = info => {
             </h2>
             <h4 style={{ marginBottom: "10%", textAlign: "center" }}>
               "Why is Coin?" is a real time sentiment analysis site that helps
-              users find relavent news. This tool, created by a 17 year-old
-              Canadian, can be used for information on{" "}
+              users find relevent news. This tool, created by a 17 year-old
+              Canadian, can be used for finding information on{" "}
               <span style={{ textDecoration: "underline" }}>your</span>{" "}
               investments.
             </h4>
