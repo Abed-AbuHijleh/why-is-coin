@@ -5,6 +5,12 @@ import Twitter from "./twitter.jsx";
 import News from "./news.jsx";
 import Transactions from "./transactions.jsx";
 
+import VN from "../../resources/emojis/very-negative.png";
+import PN from "../../resources/emojis/partial-negative.png";
+import N from "../../resources/emojis/neutral.png";
+import PP from "../../resources/emojis/partial-positive.png";
+import VP from "../../resources/emojis/very-positive.png";
+
 const Component = info => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -72,11 +78,35 @@ const Component = info => {
             >
               {" "}
               Total Sentiment:{" "}
-              {data.news !== undefined
-                ? data.news.sentiment === 0
-                  ? "Neutral"
-                  : Math.floor(data.news.sentiment * 100) / 100 + "%"
-                : ""}
+              <img
+                alt={
+                  data.news !== undefined
+                    ? data.news.sentiment === 0
+                      ? "Neutral"
+                      : Math.floor(data.news.sentiment * 100) / 100 + "%"
+                    : ""
+                }
+                src={
+                  data.news !== undefined
+                    ? // Positive
+                      data.news.sentiment > 0.05
+                      ? // Very Positive
+                        data.news.sentiment > 0.3
+                        ? VP
+                        : PP
+                      : // Negative
+                      data.news.sentiment < 0.05
+                      ? // Very negative
+                        data.news.sentiment < 0.3
+                        ? VN
+                        : PN
+                      : // Neutral
+                        N
+                    : // no news
+                      N
+                }
+                style={{ width: "17px", display: "inline" }}
+              />
             </span>
           </h3>
         </div>
@@ -129,11 +159,35 @@ const Component = info => {
               >
                 {" "}
                 Total Sentiment:{" "}
-                {data.twitter !== undefined
-                  ? data.twitter.sentiment === 0
-                    ? "Neutral"
-                    : Math.floor(data.twitter.sentiment * 100) / 100 + "%"
-                  : ""}
+                <img
+                  alt={
+                    data.twitter !== undefined
+                      ? data.twitter.sentiment === 0
+                        ? "Neutral"
+                        : Math.floor(data.twitter.sentiment * 100) / 100 + "%"
+                      : ""
+                  }
+                  src={
+                    data.twitter !== undefined
+                      ? // Positive
+                        data.twitter.sentiment > 0.05
+                        ? // Very Positive
+                          data.twitter.sentiment > 0.3
+                          ? VP
+                          : PP
+                        : // Negative
+                        data.twitter.sentiment < 0.05
+                        ? // Very negative
+                          data.twitter.sentiment < 0.3
+                          ? VN
+                          : PN
+                        : // Neutral
+                          N
+                      : // no news
+                        N
+                  }
+                  style={{ width: "17px", display: "inline" }}
+                />
               </span>
             </h3>
           </div>

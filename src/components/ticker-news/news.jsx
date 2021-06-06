@@ -1,6 +1,12 @@
 import React from "react";
 import "./news.css";
 
+import VN from "../../resources/emojis/very-negative.png";
+import PN from "../../resources/emojis/partial-negative.png";
+import N from "../../resources/emojis/neutral.png";
+import PP from "../../resources/emojis/partial-positive.png";
+import VP from "../../resources/emojis/very-positive.png";
+
 const Component = info => {
   try {
     return (
@@ -99,9 +105,30 @@ const Component = info => {
                       <h5 style={{ color: info.colors[2] }}>
                         {" "}
                         Sentiment:{" "}
-                        {article.sentiment === 0
-                          ? "Neutral"
-                          : Math.floor(article.sentiment * 100) / 100 + "%"}
+                        <img
+                          alt={
+                            article.sentiment === 0
+                              ? "Neutral"
+                              : Math.floor(article.sentiment * 100) / 100 + "%"
+                          }
+                          src={
+                            // Positive
+                            article.sentiment > 0.05
+                              ? // Very Positive
+                                article.sentiment > 0.3
+                                ? VP
+                                : PP
+                              : // Negative
+                              article.sentiment < 0.05
+                              ? // Very negative
+                                article.sentiment < 0.3
+                                ? VN
+                                : PN
+                              : // Neutral
+                                N
+                          }
+                          style={{ width: "18px", display: "inline" }}
+                        />
                       </h5>
                       <h5 style={{ color: "RGB(153, 153, 153)" }}> {date}</h5>
                     </span>
@@ -192,9 +219,33 @@ const Component = info => {
                     }}
                   >
                     Sentiment:{" "}
-                    {article.sentiment === 0
-                      ? "Neutral"
-                      : Math.floor(article.sentiment * 100) / 100 + "%"}
+                    <img
+                      alt={
+                        article.sentiment === 0
+                          ? "Neutral"
+                          : Math.floor(article.sentiment * 100) / 100 + "%"
+                      }
+                      src={
+                        // Positive
+                        article.sentiment > 0.05
+                          ? // Very Positive
+                            article.sentiment > 0.3
+                            ? VP
+                            : PP
+                          : // Negative
+                          article.sentiment < 0.05
+                          ? // Very negative
+                            article.sentiment < 0.3
+                            ? VN
+                            : PN
+                          : // Neutral
+                            N
+                      }
+                      style={{
+                        width: "30px",
+                        display: "inline"
+                      }}
+                    />
                   </div>
                 </div>
               )}
