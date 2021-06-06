@@ -21,14 +21,14 @@ import Footer from "../components/footer/footer.jsx";
 
 const hist = createBrowserHistory();
 
-// Analytics
-const trackingId = "G-0FC6ES0VBH";
-ReactGA.initialize(trackingId);
+// // Analytics
+// const trackingId = "G-0FC6ES0VBH";
+// ReactGA.initialize(trackingId);
 
-hist.listen(location => {
-  ReactGA.set({ page: location.pathname });
-  ReactGA.pageview(location.pathname);
-});
+// hist.listen(location => {
+//   ReactGA.set({ page: location.pathname });
+//   ReactGA.pageview(location.pathname);
+// });
 
 const App = () => {
   const cookies = new Cookies();
