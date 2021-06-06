@@ -43,6 +43,15 @@ const Component = info => {
         width: "min(max(200px, 80vw), 600px)",
         color: info.colors[2]
       }
+    },
+    auto: {
+      "& > *": {},
+      "& .MuiAutocomplete-popupIndicator	": {
+        color: info.colors[2]
+      },
+      "& .MuiAutocomplete-listbox": {
+        backgroundColor: "green"
+      }
     }
   }));
   const classes = useStyles();
@@ -68,6 +77,9 @@ const Component = info => {
         borderBottom: "2px solid " + info.colors[1]
       }}
     >
+      <div className="MuiAutocomplete-popper">
+        <div />
+      </div>
       {info.loading ? (
         <h4>Why is Crypto Changing?</h4>
       ) : (
@@ -121,14 +133,39 @@ const Component = info => {
       )}
       <Autocomplete
         id="combo-box-demo"
+        className={classes.auto}
         options={Coins}
         onChange={(event, value) => {
           console.log(value);
           window.location.href = "/ticker/" + value.symbol;
         }}
-        getOptionLabel={option => {
-          return option.symbol + " " + option.name;
-        }}
+        getOptionLabel={option => option.name + " " + option.symbol}
+        renderOption={option => (
+          <div
+            style={{
+              width: "100%",
+              overflow: "hidden"
+            }}
+          >
+            <img
+              alt="img"
+              style={{ width: "20px", margin: "5px", marginBottom: "-2.5px" }}
+              src={
+                "https://s2.coinmarketcap.com/static/img/coins/64x64/" +
+                option.id +
+                ".png"
+              }
+            />
+            {option.name}
+            {"   "}
+            <span
+              style={{ color: "gray", marginLeft: "7px", fontSize: "14px" }}
+            >
+              {option.symbol}
+            </span>
+            <span style={{ float: "right" }}>#{option.rank}</span>
+          </div>
+        )}
         renderInput={params => (
           <TextField
             {...params}

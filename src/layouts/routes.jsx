@@ -4,6 +4,8 @@ import { createBrowserHistory } from "history";
 
 import { Router, Route, Switch } from "react-router-dom";
 
+import HttpsRedirect from "react-https-redirect";
+
 import Cookies from "universal-cookie";
 
 import Button from "@material-ui/core/Button";
@@ -101,7 +103,7 @@ const App = () => {
   }, []);
 
   return (
-    <React.Fragment>
+    <HttpsRedirect>
       <TopNav mobileOpen={mobileOpen} colors={colors} />
       <Router history={hist}>
         <Switch>
@@ -140,7 +142,7 @@ const App = () => {
           </Button>
         </DialogActions>
       </Dialog>
-    </React.Fragment>
+    </HttpsRedirect>
   );
 };
 
