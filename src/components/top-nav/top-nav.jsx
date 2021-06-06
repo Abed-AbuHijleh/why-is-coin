@@ -100,11 +100,11 @@ const Component = info => {
               About The Site
             </h2>
             <h4 style={{ marginBottom: "10%", textAlign: "center" }}>
-              "Why is Coin?" was made by a 17 year-old from Canada. This was a
-              project done throughout his extra time, having finished highschool
-              early and preparing for University. This project is entirely paid
-              for out of pocket, so any support helps, feel free to contact me
-              too :)
+              "Why is Coin?" is a real time sentiment analysis site that helps
+              users find relavent news. This tool, created by a 17 year-old
+              Canadian, can be used for information on{" "}
+              <span style={{ textDecoration: "underline" }}>your</span>{" "}
+              investments.
             </h4>
             <Button
               variant="contained"
