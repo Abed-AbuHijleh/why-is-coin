@@ -66,9 +66,45 @@ const Component = info => {
       }
     >
       <div className="news-div-block">
-        <div id="news-div-top">
+        <div
+          id="news-div-top"
+          style={window.innerWidth < 960 ? {} : { height: "35px" }}
+        >
           <h3>
             News{" "}
+            <img
+              alt={
+                data.news !== undefined
+                  ? data.news.sentiment === 0
+                    ? "Neutral"
+                    : Math.floor(data.news.sentiment * 100) / 100 + "%"
+                  : ""
+              }
+              src={
+                data.news !== undefined
+                  ? // Positive
+                    data.news.sentiment > 5
+                    ? // Very Positive
+                      data.news.sentiment > polarThreshhold
+                      ? VP
+                      : PP
+                    : // Negative
+                    data.news.sentiment < -5
+                    ? // Very negative
+                      data.news.sentiment < polarThreshhold * -1
+                      ? VN
+                      : PN
+                    : // Neutral
+                      N
+                  : // no news
+                    N
+              }
+              style={
+                window.innerWidth < 960
+                  ? { width: "22px", float: "right" }
+                  : { width: "25px", float: "right" }
+              }
+            />
             <span
               style={{
                 float: "right",
@@ -80,35 +116,6 @@ const Component = info => {
             >
               {" "}
               Total Sentiment:{" "}
-              <img
-                alt={
-                  data.news !== undefined
-                    ? data.news.sentiment === 0
-                      ? "Neutral"
-                      : Math.floor(data.news.sentiment * 100) / 100 + "%"
-                    : ""
-                }
-                src={
-                  data.news !== undefined
-                    ? // Positive
-                      data.news.sentiment > 5
-                      ? // Very Positive
-                        data.news.sentiment > polarThreshhold
-                        ? VP
-                        : PP
-                      : // Negative
-                      data.news.sentiment < -5
-                      ? // Very negative
-                        data.news.sentiment < polarThreshhold * -1
-                        ? VN
-                        : PN
-                      : // Neutral
-                        N
-                    : // no news
-                      N
-                }
-                style={{ width: "17px", display: "inline" }}
-              />
             </span>
           </h3>
         </div>
@@ -147,9 +154,45 @@ const Component = info => {
               : { width: "45%", maxWidth: "600px" }
           }
         >
-          <div id="news-div-top">
+          <div
+            id="news-div-top"
+            style={window.innerWidth < 960 ? {} : { height: "35px" }}
+          >
             <h3 style={{ margin: 0 }}>
               Twitter{" "}
+              <img
+                alt={
+                  data.twitter !== undefined
+                    ? data.twitter.sentiment === 0
+                      ? "Neutral"
+                      : Math.floor(data.twitter.sentiment * 100) / 100 + "%"
+                    : ""
+                }
+                src={
+                  data.twitter !== undefined
+                    ? // Positive
+                      data.twitter.sentiment > 5
+                      ? // Very Positive
+                        data.twitter.sentiment > polarThreshhold
+                        ? VP
+                        : PP
+                      : // Negative
+                      data.twitter.sentiment < -5
+                      ? // Very negative
+                        data.twitter.sentiment < polarThreshhold * -1
+                        ? VN
+                        : PN
+                      : // Neutral
+                        N
+                    : // no news
+                      N
+                }
+                style={
+                  window.innerWidth < 960
+                    ? { width: "22px", float: "right" }
+                    : { width: "25px", float: "right" }
+                }
+              />
               <span
                 style={{
                   float: "right",
@@ -161,35 +204,6 @@ const Component = info => {
               >
                 {" "}
                 Total Sentiment:{" "}
-                <img
-                  alt={
-                    data.twitter !== undefined
-                      ? data.twitter.sentiment === 0
-                        ? "Neutral"
-                        : Math.floor(data.twitter.sentiment * 100) / 100 + "%"
-                      : ""
-                  }
-                  src={
-                    data.twitter !== undefined
-                      ? // Positive
-                        data.twitter.sentiment > 5
-                        ? // Very Positive
-                          data.twitter.sentiment > polarThreshhold
-                          ? VP
-                          : PP
-                        : // Negative
-                        data.twitter.sentiment < -5
-                        ? // Very negative
-                          data.twitter.sentiment < polarThreshhold * -1
-                          ? VN
-                          : PN
-                        : // Neutral
-                          N
-                      : // no news
-                        N
-                  }
-                  style={{ width: "17px", display: "inline" }}
-                />
               </span>
             </h3>
           </div>

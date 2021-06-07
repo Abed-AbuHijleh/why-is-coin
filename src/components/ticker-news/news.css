@@ -1,11 +1,29 @@
-.desktop-title-div h4 {
-  margin: 5px;
-}
-.desktop-title-div h5 {
-  color: RGB(153, 153, 153);
-  margin: 5px;
-}
-
 .mobile-news-div h5 {
   margin: 0;
+}
+
+.news-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #dadce0;
+  overflow: hidden;
+  margin-left: 12px;
+}
+
+.news-large {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+  border: 1px solid RGB(153, 153, 153);
+}
+
+.news-side {
+  grid-column: 3 / span 1;
+  border: 1px solid RGB(153, 153, 153);
+}
+
+.news-remainder {
+  border: 1px solid RGB(153, 153, 153);
 }
