@@ -4,6 +4,7 @@ import "./footer.css";
 import { makeStyles } from "@material-ui/core/styles";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles({
   root: {
@@ -11,13 +12,17 @@ const useStyles = makeStyles({
     "& .Mui-checked": {
       color: "black"
     }
+  },
+  button: {
+    color: "white",
+    width: "100%"
   }
 });
 
 const Component = info => {
   const classes = useStyles();
   return (
-    <div className="footer-outer-div">
+    <div className="footer-outer-div" id="footer">
       <div
         className="footer-div"
         style={
@@ -31,49 +36,46 @@ const Component = info => {
             <h2>Support the Site</h2>
           </li>
           <li>
-            <a id="copy" href="#copy">
-              <h4
-                onClick={() => {
-                  try {
-                    navigator.clipboard.writeText(
-                      "13AcjHWeFJA6VucLXpsFfTLpYtDkksRhaY"
-                    );
-                  } catch (e) {}
-                }}
-              >
-                Bitcoin Wallet
-              </h4>
-            </a>
+            <Button
+              className={classes.button}
+              onClick={() => {
+                try {
+                  navigator.clipboard.writeText(
+                    "13AcjHWeFJA6VucLXpsFfTLpYtDkksRhaY"
+                  );
+                } catch (e) {}
+              }}
+            >
+              <h4>Bitcoin Wallet</h4>
+            </Button>
           </li>
           <li>
-            <a id="copy" href="#copy">
-              <h4
-                onClick={() => {
-                  try {
-                    navigator.clipboard.writeText(
-                      "0x7f92601df8649afe42eed70c887e52c82f9c179a"
-                    );
-                  } catch (e) {}
-                }}
-              >
-                Ethereum Wallet
-              </h4>
-            </a>
+            <Button
+              className={classes.button}
+              onClick={() => {
+                try {
+                  navigator.clipboard.writeText(
+                    "0x7f92601df8649afe42eed70c887e52c82f9c179a"
+                  );
+                } catch (e) {}
+              }}
+            >
+              <h4>Ethereum Wallet</h4>
+            </Button>
           </li>
           <li>
-            <a id="copy" href="#copy">
-              <h4
-                onClick={() => {
-                  try {
-                    navigator.clipboard.writeText(
-                      "bnb136ns6lfw4zs5hg4n85vdthaad7hq5m4gtkgf23"
-                    );
-                  } catch (e) {}
-                }}
-              >
-                Binance Coin Wallet
-              </h4>
-            </a>
+            <Button
+              className={classes.button}
+              onClick={() => {
+                try {
+                  navigator.clipboard.writeText(
+                    "bnb136ns6lfw4zs5hg4n85vdthaad7hq5m4gtkgf23"
+                  );
+                } catch (e) {}
+              }}
+            >
+              <h4>Binance Coin Wallet</h4>
+            </Button>
           </li>
         </ul>
         {window.innerWidth < 1450 ? (
@@ -82,9 +84,16 @@ const Component = info => {
               <h2>Contact</h2>
             </li>
             <li>
-              <a id="copy" href="mailto:whyiscoin@gmail.com">
+              <Button
+                className={classes.button}
+                onClick={() => {
+                  try {
+                    navigator.clipboard.writeText("whyiscoin@gmail.com");
+                  } catch (e) {}
+                }}
+              >
                 <h4>whyiscoin@gmail.com</h4>
-              </a>
+              </Button>
             </li>
             <li>
               <h2>Theme</h2>
@@ -109,9 +118,16 @@ const Component = info => {
                 <h2>Contact</h2>
               </li>
               <li>
-                <a id="copy" href="mailto:whyiscoin@gmail.com">
+                <Button
+                  className={classes.button}
+                  onClick={() => {
+                    try {
+                      navigator.clipboard.writeText("whyiscoin@gmail.com");
+                    } catch (e) {}
+                  }}
+                >
                   <h4>whyiscoin@gmail.com</h4>
-                </a>
+                </Button>
               </li>
             </ul>
             <ul>
