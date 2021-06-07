@@ -78,9 +78,10 @@ const Component = info => {
                       </h3>
                       <img
                         style={{
-                          maxHeight: "100px",
+                          height: "100px",
+                          width: "35%",
+                          objectFit: "cover",
                           float: "right",
-                          maxWidth: "30%",
                           borderRadius: "10px"
                         }}
                         alt={article.title}
