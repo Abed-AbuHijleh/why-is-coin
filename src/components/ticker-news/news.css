@@ -17,6 +17,7 @@
   grid-column: 1 / span 2;
   grid-row: 1 / span 2;
   border: 1px solid RGB(153, 153, 153);
+  padding-bottom: 30px;
 }
 
 .news-side {

@@ -260,22 +260,46 @@ const Component = info => {
                       >
                         {article.title}
                       </h1>
-                      <h3
-                        style={{
-                          color: "RGB(153, 153, 153)",
-                          margin: 0,
-                          paddingLeft: "15px",
-                          paddingRight: "15px",
-                          paddingTop: "10px",
-                          textAlign: "center"
-                        }}
-                      >
-                        {article.content.slice(0, article.content.length - 13)}
-                      </h3>
+                      {window.innerWidth < 1500 ? (
+                        <h3
+                          style={{
+                            color: "RGB(153, 153, 153)",
+                            margin: 0,
+                            paddingLeft: "15px",
+                            paddingRight: "15px",
+                            paddingTop: "10px",
+                            textAlign: "center"
+                          }}
+                        >
+                          {article.content.slice(
+                            0,
+                            article.content.length - 13
+                          )}
+                        </h3>
+                      ) : (
+                        <h2
+                          style={{
+                            color: "RGB(153, 153, 153)",
+                            margin: 0,
+                            paddingLeft: "15px",
+                            paddingRight: "15px",
+                            paddingTop: "10px",
+                            textAlign: "center"
+                          }}
+                        >
+                          {article.content.slice(
+                            0,
+                            article.content.length - 13
+                          )}
+                        </h2>
+                      )}
                     </a>
                   </div>
                 );
-              } else if (index === 1 || index === 2) {
+              } else if (
+                (index === 1 || index === 2) &&
+                window.innerWidth < 1500
+              ) {
                 return (
                   <div
                     className="news-side"
