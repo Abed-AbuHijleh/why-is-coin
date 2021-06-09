@@ -26,19 +26,13 @@ import Footer from "../components/footer/footer.jsx";
 
 const hist = createBrowserHistory();
 
-// // Analytics
-// const trackingId = "G-0FC6ES0VBH";
-// ReactGA.initialize(trackingId);
-
-// hist.listen(location => {
-//   ReactGA.set({ page: location.pathname });
-//   ReactGA.pageview(location.pathname);
-// });
-
 const App = () => {
   const cookies = new Cookies();
   const [mobileOpen, setMobileOpen] = useState(
     window.innerWidth < 960 ? true : false
+  );
+  const [largeScreen, setScreen] = useState(
+    window.innerWidth >= 1500 ? true : false
   );
   const [darkmode, setTheme] = useState(
     cookies.get("darkmode") === "true" ? true : false
@@ -64,6 +58,11 @@ const App = () => {
     } else {
       setMobileOpen(true);
     }
+    if (window.innerWidth < 1500) {
+      setScreen(false);
+    } else {
+      setScreen(true);
+    }
   };
 
   // 0 background
@@ -72,6 +71,7 @@ const App = () => {
   // 3 contrasting background
   // 4 accent 1
   // 5 accent 2
+  // white/black
   let colors;
   if (darkmode) {
     colors = [
@@ -80,7 +80,8 @@ const App = () => {
       "#f2f3f7",
       "RGB(24, 24, 34)",
       "#7779e6",
-      "#0090ff"
+      "#0090ff",
+      "black"
     ];
   } else {
     colors = [
@@ -89,7 +90,8 @@ const App = () => {
       "#021217",
       "RGB(248, 248, 255)",
       "#29099c",
-      "#0090ff"
+      "#0090ff",
+      "white"
     ];
   }
 
@@ -103,15 +105,15 @@ const App = () => {
   }, []);
 
   return (
-    <HttpsRedirect>
-      <TopNav mobileOpen={mobileOpen} colors={colors} />
+    <React.Fragment>
+      <TopNav mobileOpen={mobileOpen} colors={colors} darkmode={darkmode} />
       <Router history={hist}>
         <Switch>
           <Route exact path="/">
             <Home colors={colors} />
           </Route>
           <Route exact path="/ticker/:id">
-            <Ticker colors={colors} />
+            <Ticker colors={colors} largeScreen={largeScreen} />
           </Route>
           <Route exact path="/privacy-policy">
             <Privacy colors={colors} />
@@ -142,7 +144,7 @@ const App = () => {
           </Button>
         </DialogActions>
       </Dialog>
-    </HttpsRedirect>
+    </React.Fragment>
   );
 };
 

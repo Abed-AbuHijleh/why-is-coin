@@ -43,8 +43,8 @@ const Component = info => {
                             minHeight: "190px",
                             marginBottom: "10px",
                             borderRadius: "10px",
-                            border: "2px solid " + info.colors[3],
-                            backgroundColor: "black"
+                            border: "1px solid RGB(44, 44, 54)",
+                            backgroundColor: info.colors[6]
                           }
                         : {
                             width: "min(99%, 600px)",
@@ -52,7 +52,7 @@ const Component = info => {
                             marginBottom: "10px",
                             borderRadius: "10px",
                             border: "1px solid gray",
-                            backgroundColor: "white"
+                            backgroundColor: info.colors[6]
                           }
                     }
                   >
@@ -153,17 +153,10 @@ const Component = info => {
                 return (
                   <div
                     className="news-large"
-                    style={
-                      info.colors[0] === "RGB(34, 34, 34)"
-                        ? {
-                            backgroundColor: "black",
-                            color: info.colors[2]
-                          }
-                        : {
-                            backgroundColor: "white",
-                            color: info.colors[2]
-                          }
-                    }
+                    style={{
+                      backgroundColor: info.colors[6],
+                      color: info.colors[2]
+                    }}
                   >
                     <a
                       key={article.date}
@@ -301,19 +294,11 @@ const Component = info => {
                 return (
                   <div
                     className="news-side"
-                    style={
-                      info.colors[0] === "RGB(34, 34, 34)"
-                        ? {
-                            backgroundColor: "black",
-                            color: info.colors[2],
-                            position: "relative"
-                          }
-                        : {
-                            backgroundColor: "white",
-                            color: info.colors[2],
-                            position: "relative"
-                          }
-                    }
+                    style={{
+                      backgroundColor: info.colors[6],
+                      color: info.colors[2],
+                      position: "relative"
+                    }}
                   >
                     <a
                       key={article.date}

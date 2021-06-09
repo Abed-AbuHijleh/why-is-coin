@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./top-nav.css";
 
-import Logo from "../../resources/images/logo.png";
+import LogoDark from "../../resources/images/logo-dark.png";
+import LogoLight from "../../resources/images/logo-light.png";
 
 import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
@@ -49,10 +50,9 @@ const Component = info => {
         <a href="/">
           <img
             alt="Why is Coin"
-            src={Logo}
+            src={info.darkmode ? LogoDark : LogoLight}
             style={{
-              height: "34px",
-              width: "90px",
+              width: "80px",
               marginTop: "0px",
               marginRight: "20px"
             }}

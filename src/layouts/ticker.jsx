@@ -79,6 +79,7 @@ const Ticker = info => {
               <TickerNews
                 data={[data.pc_day, data.name]}
                 colors={info.colors}
+                largeScreen={info.largeScreen}
               />
               <TickerInfo data={data} colors={info.colors} />
             </div>

@@ -45,13 +45,7 @@ const Component = info => {
       }
     },
     auto: {
-      "& > *": {},
-      "& .MuiAutocomplete-popupIndicator	": {
-        color: info.colors[2]
-      },
-      "& .MuiAutocomplete-listbox": {
-        backgroundColor: "green"
-      }
+      "& > *": { overflow: "hidden" }
     }
   }));
   const classes = useStyles();
@@ -143,8 +137,15 @@ const Component = info => {
         renderOption={option => (
           <div
             style={{
-              width: "100%",
-              overflow: "hidden"
+              width: "min(max(200px, 80vw), 600px)",
+              overflow: "hidden",
+              marginTop: "-16px",
+              marginLeft: "-16px",
+              marginRight: "-16px",
+              padding: "16px",
+              height: "30px",
+              backgroundColor: info.colors[6],
+              color: info.colors[2]
             }}
           >
             <img
