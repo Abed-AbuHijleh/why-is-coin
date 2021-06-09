@@ -3,7 +3,7 @@
 }
 
 .ticker-info-div {
-  width: 24vw;
+  width: min(24vw, 300px);
   float: right;
   max-height: 190vh;
   overflow-y: scroll;

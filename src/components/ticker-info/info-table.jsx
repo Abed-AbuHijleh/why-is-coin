@@ -141,7 +141,7 @@ const Component = info => {
                             {dataRow.key}
                           </TableCell>
                           <TableCell style={{ color: info.colors[2] }}>
-                            {dataRow.value}
+                            <span id={dataRow.class}>{dataRow.value}</span>
                           </TableCell>
                         </TableRow>
                       ))}
@@ -181,19 +181,23 @@ const Component = info => {
         data: [
           {
             key: "1 Hour",
-            value: returnSigFigs(data.pc_hour, 2) + "%"
+            value: returnSigFigs(data.pc_hour, 2) + "%",
+            class: data.pc_hour < 0 ? "red" : "green"
           },
           {
             key: "24 Hours",
-            value: returnSigFigs(data.pc_day, 2) + "%"
+            value: returnSigFigs(data.pc_day, 2) + "%",
+            class: data.pc_day < 0 ? "red" : "green"
           },
           {
             key: "7 Days",
-            value: returnSigFigs(data.pc_week, 2) + "%"
+            value: returnSigFigs(data.pc_week, 2) + "%",
+            class: data.pc_week < 0 ? "red" : "green"
           },
           {
             key: "30 Days",
-            value: returnSigFigs(data.pc_month, 2) + "%"
+            value: returnSigFigs(data.pc_month, 2) + "%",
+            class: data.pc_month < 0 ? "red" : "green"
           }
         ]
       },
@@ -203,11 +207,13 @@ const Component = info => {
         data: [
           {
             key: "Circulating Supply",
-            value: numberWithCommas(returnSigFigs(data.circulating_supply, 4))
+            value: numberWithCommas(returnSigFigs(data.circulating_supply, 4)),
+            class: "null"
           },
           {
             key: "Max Supply",
-            value: numberWithCommas(returnSigFigs(data.max_supply, 4))
+            value: numberWithCommas(returnSigFigs(data.max_supply, 4)),
+            class: "null"
           }
         ]
       },

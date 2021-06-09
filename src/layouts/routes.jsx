@@ -103,7 +103,7 @@ const App = () => {
   }, []);
 
   return (
-    <HttpsRedirect>
+    <React.Fragment>
       <TopNav mobileOpen={mobileOpen} colors={colors} />
       <Router history={hist}>
         <Switch>
@@ -142,7 +142,7 @@ const App = () => {
           </Button>
         </DialogActions>
       </Dialog>
-    </HttpsRedirect>
+    </React.Fragment>
   );
 };
 

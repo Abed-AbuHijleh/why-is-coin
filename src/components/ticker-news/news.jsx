@@ -52,7 +52,7 @@ const Component = info => {
                             marginBottom: "10px",
                             borderRadius: "10px",
                             border: "1px solid gray",
-                            backgroundColor: info.colors[3]
+                            backgroundColor: "white"
                           }
                     }
                   >
@@ -160,7 +160,7 @@ const Component = info => {
                             color: info.colors[2]
                           }
                         : {
-                            backgroundColor: info.colors[3],
+                            backgroundColor: "white",
                             color: info.colors[2]
                           }
                     }
@@ -297,10 +297,7 @@ const Component = info => {
                     </a>
                   </div>
                 );
-              } else if (
-                (index === 1 || index === 2) &&
-                window.innerWidth < 1500
-              ) {
+              } else if (index === 1 || index === 2) {
                 return (
                   <div
                     className="news-side"
@@ -308,11 +305,13 @@ const Component = info => {
                       info.colors[0] === "RGB(34, 34, 34)"
                         ? {
                             backgroundColor: "black",
-                            color: info.colors[2]
+                            color: info.colors[2],
+                            position: "relative"
                           }
                         : {
-                            backgroundColor: info.colors[3],
-                            color: info.colors[2]
+                            backgroundColor: "white",
+                            color: info.colors[2],
+                            position: "relative"
                           }
                     }
                   >
@@ -364,7 +363,7 @@ const Component = info => {
                           margin: 0,
                           paddingLeft: "15px",
                           paddingRight: "15px",
-                          paddingTop: "20px",
+                          paddingTop: "calc(20px + 15%)",
                           textAlign: "center"
                         }}
                       >
@@ -394,7 +393,10 @@ const Component = info => {
                             color: info.colors[2],
                             fontSize: "14px",
                             float: "right",
-                            paddingRight: "10px"
+                            paddingRight: "10px",
+                            position: "absolute",
+                            bottom: "10px",
+                            right: "10px"
                           }}
                         >
                           Sentiment:{" "}
@@ -439,11 +441,13 @@ const Component = info => {
                       info.colors[0] === "RGB(34, 34, 34)"
                         ? {
                             backgroundColor: "black",
-                            color: info.colors[2]
+                            color: info.colors[2],
+                            position: "relative"
                           }
                         : {
-                            backgroundColor: info.colors[3],
-                            color: info.colors[2]
+                            backgroundColor: "white",
+                            color: info.colors[2],
+                            position: "relative"
                           }
                     }
                   >
@@ -517,6 +521,7 @@ const Component = info => {
                           paddingLeft: "15px",
                           paddingRight: "15px",
                           paddingTop: "10px",
+                          paddingBottom: "10px",
                           textAlign: "center"
                         }}
                       >
@@ -533,7 +538,9 @@ const Component = info => {
                             color: info.colors[2],
                             fontSize: "14px",
                             float: "right",
-                            paddingRight: "10px"
+                            position: "absolute",
+                            bottom: "10px",
+                            right: "10px"
                           }}
                         >
                           Sentiment:{" "}

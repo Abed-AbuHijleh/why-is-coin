@@ -1,7 +1,3 @@
-.news-parent-div h3 {
-  margin: 0;
-}
-
 .news-div-block {
   width: 90%;
   margin: 4.5%;
@@ -15,9 +11,4 @@
   width: 90%;
   height: 25px;
   padding-left: 8px;
-}
-
-.news-div-content {
-  max-height: 80vh;
-  overflow-y: scroll;
 }
