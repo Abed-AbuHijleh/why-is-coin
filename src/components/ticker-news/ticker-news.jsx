@@ -58,6 +58,7 @@ const Component = info => {
             justifyContent: "center",
             color: info.colors[2]
           }}
+          className="news-outer-div"
         >
           <div
             style={{
@@ -109,18 +110,7 @@ const Component = info => {
                   }
                   style={{ width: "25px", float: "right" }}
                 />
-                <span
-                  style={{
-                    float: "right",
-                    margin: 0,
-                    marginTop: "4px",
-                    marginRight: "5px",
-                    fontSize: "14px"
-                  }}
-                >
-                  {" "}
-                  Total Sentiment:{" "}
-                </span>
+                <span className="news-sentiment">Total Sentiment: </span>
               </h3>
             </div>
             <div
@@ -186,18 +176,7 @@ const Component = info => {
                   }
                   style={{ width: "25px", float: "right" }}
                 />
-                <span
-                  style={{
-                    float: "right",
-                    margin: 0,
-                    marginTop: "4px",
-                    marginRight: "5px",
-                    fontSize: "14px"
-                  }}
-                >
-                  {" "}
-                  Total Sentiment:{" "}
-                </span>
+                <span className="news-sentiment">Total Sentiment: </span>
               </h3>
             </div>
             <div
@@ -243,6 +222,7 @@ const Component = info => {
                 paddingBottom: "30px",
                 color: info.colors[2]
               }}
+              className="news-outer-div"
             >
               <div
                 style={{
@@ -307,16 +287,7 @@ const Component = info => {
                           }
                           style={{ width: "25px", float: "right" }}
                         />
-                        <span
-                          style={{
-                            float: "right",
-                            margin: 0,
-                            marginTop: "4px",
-                            marginRight: "5px",
-                            fontSize: "14px"
-                          }}
-                        >
-                          {" "}
+                        <span className="news-sentiment">
                           Total Sentiment:{" "}
                         </span>
                       </h3>
@@ -392,18 +363,7 @@ const Component = info => {
                         }
                         style={{ width: "25px", float: "right" }}
                       />
-                      <span
-                        style={{
-                          float: "right",
-                          margin: 0,
-                          marginTop: "4px",
-                          marginRight: "5px",
-                          fontSize: "14px"
-                        }}
-                      >
-                        {" "}
-                        Total Sentiment:{" "}
-                      </span>
+                      <span className="news-sentiment">Total Sentiment: </span>
                     </h3>
                   </div>
                   <div
@@ -430,6 +390,7 @@ const Component = info => {
                 paddingBottom: "30px",
                 color: info.colors[2]
               }}
+              className="news-outer-div"
             >
               <div
                 style={{
@@ -488,18 +449,7 @@ const Component = info => {
                         }
                         style={{ width: "25px", float: "right" }}
                       />
-                      <span
-                        style={{
-                          float: "right",
-                          margin: 0,
-                          marginTop: "4px",
-                          marginRight: "5px",
-                          fontSize: "14px"
-                        }}
-                      >
-                        {" "}
-                        Total Sentiment:{" "}
-                      </span>
+                      <span className="news-sentiment">Total Sentiment: </span>
                     </h3>
                   </div>
                   <div
@@ -580,16 +530,7 @@ const Component = info => {
                             }
                             style={{ width: "25px", float: "right" }}
                           />
-                          <span
-                            style={{
-                              float: "right",
-                              margin: 0,
-                              marginTop: "4px",
-                              marginRight: "5px",
-                              fontSize: "14px"
-                            }}
-                          >
-                            {" "}
+                          <span className="news-sentiment">
                             Total Sentiment:{" "}
                           </span>
                         </h3>

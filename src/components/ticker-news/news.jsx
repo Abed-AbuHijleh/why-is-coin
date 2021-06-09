@@ -51,7 +51,7 @@ const Component = info => {
                             minHeight: "190px",
                             marginBottom: "10px",
                             borderRadius: "10px",
-                            border: "1px solid gray",
+                            border: "1px solid RGB(203, 203, 213)",
                             backgroundColor: info.colors[6]
                           }
                     }
@@ -153,10 +153,19 @@ const Component = info => {
                 return (
                   <div
                     className="news-large"
-                    style={{
-                      backgroundColor: info.colors[6],
-                      color: info.colors[2]
-                    }}
+                    style={
+                      info.colors[0] === "RGB(34, 34, 34)"
+                        ? {
+                            backgroundColor: info.colors[6],
+                            color: info.colors[2],
+                            border: "1px solid RGB(44, 44, 54)"
+                          }
+                        : {
+                            backgroundColor: info.colors[6],
+                            color: info.colors[2],
+                            border: "1px solid RGB(203, 203, 213)"
+                          }
+                    }
                   >
                     <a
                       key={article.date}
@@ -250,7 +259,11 @@ const Component = info => {
                         </span>
                       </div>
                       <h1
-                        style={{ color: info.colors[2], textAlign: "center" }}
+                        style={{
+                          color: info.colors[2],
+                          textAlign: "center",
+                          fontWeight: "550"
+                        }}
                       >
                         {article.title}
                       </h1>
@@ -262,7 +275,8 @@ const Component = info => {
                             paddingLeft: "15px",
                             paddingRight: "15px",
                             paddingTop: "10px",
-                            textAlign: "center"
+                            textAlign: "center",
+                            fontWeight: "450"
                           }}
                         >
                           {article.content.slice(
@@ -294,11 +308,19 @@ const Component = info => {
                 return (
                   <div
                     className="news-side"
-                    style={{
-                      backgroundColor: info.colors[6],
-                      color: info.colors[2],
-                      position: "relative"
-                    }}
+                    style={
+                      info.colors[0] === "RGB(34, 34, 34)"
+                        ? {
+                            backgroundColor: info.colors[6],
+                            color: info.colors[2],
+                            border: "1px solid RGB(44, 44, 54)"
+                          }
+                        : {
+                            backgroundColor: info.colors[6],
+                            color: info.colors[2],
+                            border: "1px solid RGB(203, 203, 213)"
+                          }
+                    }
                   >
                     <a
                       key={article.date}
@@ -425,14 +447,14 @@ const Component = info => {
                     style={
                       info.colors[0] === "RGB(34, 34, 34)"
                         ? {
-                            backgroundColor: "black",
+                            backgroundColor: info.colors[6],
                             color: info.colors[2],
-                            position: "relative"
+                            border: "1px solid RGB(44, 44, 54)"
                           }
                         : {
-                            backgroundColor: "white",
+                            backgroundColor: info.colors[6],
                             color: info.colors[2],
-                            position: "relative"
+                            border: "1px solid RGB(203, 203, 213)"
                           }
                     }
                   >

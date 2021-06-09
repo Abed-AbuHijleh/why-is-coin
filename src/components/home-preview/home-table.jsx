@@ -45,7 +45,14 @@ const Component = info => {
   function createData(post) {
     try {
       const name = (
-        <React.StrictMode>
+        <a
+          href={"/ticker/" + post.symbol}
+          className="table-atag"
+          style={{
+            textDecoration: "none",
+            color: info.colors[2]
+          }}
+        >
           <span>
             <img
               alt="img"
@@ -58,54 +65,54 @@ const Component = info => {
             />
           </span>
           <span>
-            <a
-              href={"/ticker/" + post.symbol}
-              className="table-atag"
-              style={{
-                textDecoration: "none",
-                color: info.colors[2]
-              }}
-            >
-              <ul style={{ margin: "0", listStyleType: "none" }}>
-                <li>
-                  <h4 style={{ color: info.colors[2] }}> {post.name}</h4>
-                </li>
-                <li>
-                  <span>
-                    <div
-                      style={{
-                        padding: "3px",
-                        display: "inline",
-                        backgroundColor: info.colors[0],
-                        borderRadius: "4px",
-                        marginRight: "5px"
-                      }}
-                    >
-                      {post.rank}
-                    </div>
-                  </span>
-                  <span style={{ color: info.colors[2] }}>{post.symbol}</span>
-                </li>
-              </ul>
-            </a>
+            <ul style={{ margin: "0", listStyleType: "none" }}>
+              <li>
+                <h4 style={{ color: info.colors[2], fontWeight: "420" }}>
+                  {" "}
+                  {post.name}
+                </h4>
+              </li>
+              <li>
+                <span>
+                  <div
+                    style={{
+                      padding: "3px",
+                      display: "inline",
+                      backgroundColor: info.colors[0],
+                      borderRadius: "4px",
+                      marginRight: "5px"
+                    }}
+                  >
+                    {post.rank}
+                  </div>
+                </span>
+                <span style={{ color: info.colors[2] }}>{post.symbol}</span>
+              </li>
+            </ul>
           </span>
-        </React.StrictMode>
+        </a>
       );
 
       const price = (
-        <h4 style={{ color: info.colors[2] }}>
+        <h4 style={{ color: info.colors[2], fontWeight: "400" }}>
           {"$" + numberWithCommas(returnSigFigs(post.price, 4))}
         </h4>
       );
 
       const pc_hour = (
-        <h4 id={post.pc_hour < 0 ? "red" : "green"}>
+        <h4
+          id={post.pc_hour < 0 ? "red" : "green"}
+          style={{ fontWeight: "400" }}
+        >
           {returnSigFigs(post.pc_hour, 2) + "%"}
         </h4>
       );
 
       const pc_day = (
-        <h4 id={post.pc_day < 0 ? "red" : "green"}>
+        <h4
+          id={post.pc_day < 0 ? "red" : "green"}
+          style={{ fontWeight: "400" }}
+        >
           {returnSigFigs(post.pc_day, 2) + "%"}
         </h4>
       );

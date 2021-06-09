@@ -99,7 +99,13 @@ const Component = info => {
             >
               About The Site
             </h2>
-            <h4 style={{ marginBottom: "10%", textAlign: "center" }}>
+            <h4
+              style={{
+                marginBottom: "10%",
+                textAlign: "center",
+                fontWeight: "500"
+              }}
+            >
               "Why is Coin?" is a real time sentiment analysis site that helps
               users find relevent news. This tool, created by a 17 year-old
               Canadian, can be used for finding information on{" "}
@@ -138,7 +144,9 @@ const Component = info => {
                 </IconButton>
               </span>
             </h4>
-            <h6>13AcjHWeFJA6VucLXpsFfTLpYtDkksRhaY</h6>
+            <h6 style={{ fontWeight: "600" }}>
+              13AcjHWeFJA6VucLXpsFfTLpYtDkksRhaY
+            </h6>
             <h4>
               Ethereum Address
               <span
@@ -155,7 +163,9 @@ const Component = info => {
                 </IconButton>
               </span>
             </h4>
-            <h6>0x7f92601df8649afe42eed70c887e52c82f9c179a</h6>
+            <h6 style={{ fontWeight: "600" }}>
+              0x7f92601df8649afe42eed70c887e52c82f9c179a
+            </h6>
             <h4>
               Binance Coin Address
               <span
@@ -172,7 +182,9 @@ const Component = info => {
                 </IconButton>
               </span>
             </h4>
-            <h6>bnb136ns6lfw4zs5hg4n85vdthaad7hq5m4gtkgf23</h6>
+            <h6 style={{ fontWeight: "600" }}>
+              bnb136ns6lfw4zs5hg4n85vdthaad7hq5m4gtkgf23
+            </h6>
           </div>
         </div>
       </Drawer>
