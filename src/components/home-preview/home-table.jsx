@@ -8,6 +8,13 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 
+import VN from "../../resources/emojis/very-negative.png";
+import PN from "../../resources/emojis/partial-negative.png";
+import N from "../../resources/emojis/neutral.png";
+import PP from "../../resources/emojis/partial-positive.png";
+import VP from "../../resources/emojis/very-positive.png";
+const polarThreshhold = 40;
+
 const numberWithCommas = num => {
   const parts = num.toString().split(".");
   parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -39,7 +46,9 @@ const returnSigFigs = (value, sigFigs) => {
 const Component = info => {
   const useStyles = makeStyles({
     table: {
-      background: info.colors[3]
+      "& > *": {
+        background: "info.colors[3]"
+      }
     }
   });
   function createData(post) {
@@ -93,6 +102,33 @@ const Component = info => {
         </a>
       );
 
+      const sentiment = (
+        <img
+          alt={
+            post.sentiment === 0
+              ? "Neutral"
+              : Math.floor(post.sentiment * 100) / 100 + "%"
+          }
+          src={
+            // Positive
+            post.sentiment > 5
+              ? // Very Positive
+                post.sentiment > polarThreshhold
+                ? VP
+                : PP
+              : // Negative
+              post.sentiment < -5
+              ? // Very negative
+                post.sentiment < polarThreshhold * -1
+                ? VN
+                : PN
+              : // Neutral
+                N
+          }
+          style={{ width: "25px", float: "right" }}
+        />
+      );
+
       const price = (
         <h4 style={{ color: info.colors[2], fontWeight: "400" }}>
           {"$" + numberWithCommas(returnSigFigs(post.price, 4))}
@@ -132,6 +168,7 @@ const Component = info => {
 
       return {
         name,
+        sentiment,
         price,
         pc_hour,
         pc_day,
@@ -140,12 +177,14 @@ const Component = info => {
     } catch (e) {
       console.log(e);
       const name = <h3>Error</h3>;
+      const sentiment = <h3> </h3>;
       const price = <h3> </h3>;
       const pc_hour = <h3> </h3>;
       const pc_day = <h3> </h3>;
       const graph = <h3> </h3>;
       return {
         name,
+        sentiment,
         price,
         pc_hour,
         pc_day,
@@ -159,6 +198,11 @@ const Component = info => {
 
   const columns = [
     { id: "name", label: "Name" },
+    {
+      id: "sentiment",
+      label: "Sentiment",
+      align: "right"
+    },
     {
       id: "price",
       label: "Price",
@@ -200,7 +244,9 @@ const Component = info => {
                     : { minWidth: column.minWidth }
                 }
               >
-                <h3 style={{ margin: 0, color: info.colors[2] }}>
+                <h3
+                  style={{ margin: 0, color: info.colors[2], fontWeight: 400 }}
+                >
                   {column.label}
                 </h3>
               </TableCell>
@@ -213,10 +259,15 @@ const Component = info => {
               <TableCell
                 component="th"
                 scope="row"
-                style={{ backgroundColor: info.colors[3] }}
+                style={
+                  window.innerWidth < 960
+                    ? { backgroundColor: info.colors[3] }
+                    : {}
+                }
               >
                 {row.name}
               </TableCell>
+              <TableCell align="right">{row.sentiment}</TableCell>
               <TableCell align="right">{row.price}</TableCell>
               <TableCell align="right">{row.pc_hour}</TableCell>
               <TableCell align="right">{row.pc_day}</TableCell>

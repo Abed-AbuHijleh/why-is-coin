@@ -98,6 +98,7 @@ const Component = info => {
             <li>
               <h2>Theme</h2>
               <FormControlLabel
+                style={{ marginLeft: "15px" }}
                 control={
                   <Switch
                     className={classes.root}

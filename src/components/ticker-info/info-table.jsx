@@ -98,7 +98,9 @@ const Component = info => {
           </TableCell>
           <TableCell component="th" scope="row">
             <Typography variant="h6" gutterBottom component="div">
-              {row.header}
+              <span style={{ fontWeight: "400", fontSize: "18px" }}>
+                {row.header}
+              </span>
             </Typography>
           </TableCell>
         </TableRow>
@@ -230,12 +232,16 @@ const Component = info => {
           <TableRow>
             <TableCell style={{ color: info.colors[2] }}>
               <Typography variant="h6" gutterBottom component="div">
-                Price
+                <span style={{ fontWeight: "450", fontSize: "18px" }}>
+                  Price
+                </span>
               </Typography>
             </TableCell>
             <TableCell align="center" style={{ color: info.colors[2] }}>
               <Typography variant="h6" gutterBottom component="div">
-                {"$" + numberWithCommas(returnSigFigs(data.price, 4))}
+                <span style={{ fontWeight: "450", fontSize: "18px" }}>
+                  {"$" + numberWithCommas(returnSigFigs(data.price, 4))}
+                </span>
               </Typography>
             </TableCell>
           </TableRow>

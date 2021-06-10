@@ -59,7 +59,7 @@ const Component = info => {
           />
         </a>
         <span onClick={MenuClicked} style={{ color: "white" }}>
-          <h3 style={{ color: info.colors[5] }}>About</h3>
+          <h3 style={{ color: info.colors[5], fontWeight: 550 }}>About</h3>
         </span>
       </div>
       <Drawer anchor="right" open={DrawerToggled}>
